@@ -23,14 +23,14 @@ const ChatApp = () => {
 
   //This is for the animation to put hte input bar to the botom
   const inputRef = useRef(null);
+  const greetingRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
     setIsActive(true)
     gsap.to(inputRef.current, {
-      position: "fixed",
-      bottom: '20px',
-      padding: "0 20px",
+      display: "flex",
+      alignItems: "flex-end",
     });
   };
 
@@ -44,12 +44,13 @@ const ChatApp = () => {
     });
 
     console.log(response)
-    
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
       textareaRef.current.rows = 1;
     }
     setInputText('')
+
+    handleClick()
   };
 
 
@@ -84,7 +85,7 @@ const ChatApp = () => {
 
         <div className="middle-container">
           {/* Greeting */}
-          <div className="greeting">
+          <div className="greeting" ref={greetingRef}>
             <h2>
               <span className="greeting-text">Good Evening,</span>
               <span className="name"> Mimoun</span>
@@ -92,8 +93,8 @@ const ChatApp = () => {
           </div>
 
           {/* Input Box */}
-          <form onSubmit={handleSendMessage}>
-            <div className={`input-container`} ref={inputRef}>
+          <form onSubmit={handleSendMessage} ref={inputRef}>
+            <div className= "input-container">
               <div className="input-wrapper">
                 <RiImageAddLine id="add-image-icon" className="icon" size="27px"/>
                 <textarea

@@ -91,6 +91,9 @@ h1, h2, p {
 
 .main-content {
     background-color: $main-section-color;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -157,15 +160,21 @@ h1, h2, p {
 }
 
 .middle-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-rows: 1fr 1fr;
     align-items: center;
-    justify-content: center;
-    height: 90%;
+    justify-items: center;
+    min-height: 525px;
+    flex: 1;
+    padding-bottom: 30px;
     position: relative;
 }
 
 .greeting {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
     font-size: 25px;
     background-image: linear-gradient(to right, #6B54C7, #B85F9A 50%, #EE3144);
     background-clip: text;
@@ -173,6 +182,14 @@ h1, h2, p {
     margin-bottom: 1rem;
 }
 
+form {
+    height: 100%;
+
+    // &:hover {
+    //     display: flex;
+    //     align-items: flex-end;
+    //  }
+}
 
 .input-container {
     display: flex;
