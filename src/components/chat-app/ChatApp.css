@@ -1,0 +1,212 @@
+.app {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  min-height: 100vh;
+}
+
+h1, h2, p {
+  font-family: "supreme";
+}
+
+.icon {
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #161616;
+  padding: 20px 0;
+  width: 70px;
+}
+.sidebar .spacer {
+  flex-grow: 1;
+}
+.sidebar .icon {
+  color: white;
+  margin-top: 0.3rem;
+}
+.sidebar #menu-icon {
+  color: #d4d4d4;
+  transition: 0.3s ease;
+}
+.sidebar #menu-icon::before {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0;
+  transform: scale(1);
+  transition: all 0.3s ease-out;
+}
+.sidebar #menu-icon:hover::before {
+  opacity: 0.15;
+  transform: scale(1.6);
+}
+.sidebar #add-button-icon {
+  margin-top: 40px;
+}
+.sidebar #settings-button-icon::before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0;
+  transform: scale(1);
+  transition: all 0.3s ease-out;
+}
+.sidebar #settings-button-icon:hover::before {
+  opacity: 0.15;
+  transform: scale(1.4);
+}
+
+.main-content {
+  background-color: #1E1E1E;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+.header h1 {
+  font-size: 23px;
+  color: white;
+  font-weight: 200;
+}
+.header .profile-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #6B54C7;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.header .profile-icon::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+.header .profile-icon:hover::before {
+  opacity: 0.13;
+  transform: scale(1.4);
+}
+
+.left-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.left-section:hover {
+  background-color: rgba(212, 212, 212, 0.1);
+  border-radius: 10px;
+}
+.left-section h1 {
+  margin: 5px 7px;
+}
+.left-section .icon {
+  margin: 6px 5px 0 0;
+  cursor: pointer;
+}
+
+.middle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  position: relative;
+}
+
+.greeting {
+  font-size: 25px;
+  background-image: linear-gradient(to right, #6B54C7, #B85F9A 50%, #EE3144);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-container .input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 60vw;
+  position: relative;
+}
+.input-container .input-wrapper textarea {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 650px;
+  min-height: 55px;
+  max-height: 350px;
+  border-radius: 30px;
+  border: none;
+  background-color: rgba(60, 64, 66, 0.5);
+  padding: 13px 55px;
+  resize: none;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: "supreme";
+}
+.input-container .input-wrapper textarea::-webkit-scrollbar {
+  width: 8px;
+}
+.input-container .input-wrapper textarea::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 40px;
+  padding: 15px 0;
+}
+.input-container .input-wrapper textarea::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+.input-container .input-wrapper textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+  cursor: default;
+}
+.input-container .input-wrapper #add-image-icon {
+  position: relative;
+  top: -15px;
+  left: 40px;
+  color: white;
+  cursor: pointer;
+}
+.input-container .input-wrapper #send-button {
+  position: relative;
+  top: -10px;
+  right: 40px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.input-container .input-wrapper #send-button:disabled {
+  cursor: default;
+}/*# sourceMappingURL=ChatApp.css.map */
