@@ -19,6 +19,8 @@ const ChatApp = () => {
   //Sees if the input is empty or not
   const [inputText, setInputText] = useState('');
 
+  const textareaRef = useRef(null);
+
   //This is for the animation to put hte input bar to the botom
   const inputRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
@@ -37,11 +39,16 @@ const ChatApp = () => {
 
     const message = inputText;
     const response = askMe(message)
-    .then((joke) => {
-      console.log('Response:', joke);
+    .then((message) => {
+      console.log('Response:', message);
     });
 
     console.log(response)
+    
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.rows = 1;
+    }
     setInputText('')
   };
 
@@ -90,12 +97,18 @@ const ChatApp = () => {
               <div className="input-wrapper">
                 <RiImageAddLine id="add-image-icon" className="icon" size="27px"/>
                 <textarea
+                  ref={textareaRef}
                   placeholder="What's on your mind?"
                   value={inputText}
                   onChange={(e) => {
                     setInputText(e.target.value);
                     e.target.style.height = 'auto';
                     e.target.style.height = `${e.target.scrollHeight}px`;
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.ctrlKey && e.key === "Enter") {
+                      handleSendMessage(e)
+                    }
                   }}
                   rows="1"
                 />
