@@ -34,7 +34,7 @@ const ChatApp = () => {
     });
     gsap.to(".greeting", {
       y: -700,
-      duration: 1
+      duration: 0
     })
   };
 

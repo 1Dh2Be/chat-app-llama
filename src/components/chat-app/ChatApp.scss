@@ -161,6 +161,7 @@ h1, h2, p {
 
 .middle-container {
     display: grid;
+    width: 100%;
     box-sizing: border-box;
     grid-template-rows: 1fr 1fr;
     align-items: center;
@@ -184,6 +185,7 @@ h1, h2, p {
 
 form {
     height: 100%;
+    width: 100%;
 }
 
 .input-container {
@@ -208,7 +210,7 @@ form {
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        width: 60vw;
+        width: 80vw;
         position: relative;
 
         textarea {
@@ -216,7 +218,7 @@ form {
             box-sizing: border-box;
             align-items: center;
             flex-grow: 1;
-            max-width: 800px;
+            max-width: 750px;
             min-height: 55px;
             max-height: 350px;
             border-radius: 30px;
