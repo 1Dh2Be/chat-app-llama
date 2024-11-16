@@ -159,8 +159,19 @@ form {
 
 .input-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.input-container .caution-message {
+  display: none;
+}
+.input-container .caution-message.active {
+  display: block;
+  position: relative;
+  top: 20px;
+  color: white;
+  font-size: 12px;
 }
 .input-container .input-wrapper {
   display: flex;
@@ -174,7 +185,7 @@ form {
   box-sizing: border-box;
   align-items: center;
   flex-grow: 1;
-  max-width: 650px;
+  max-width: 800px;
   min-height: 55px;
   max-height: 350px;
   border-radius: 30px;

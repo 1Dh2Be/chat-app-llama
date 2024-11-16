@@ -18,7 +18,7 @@ async function askMe(ask) {
           content: ask
         }
       ],
-      model: 'llama3.2-90b-vision',
+      model: 'llama3.2-1b',
       max_tokens: 1000,
       temperature: 0.7
     });

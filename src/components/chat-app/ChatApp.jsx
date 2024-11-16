@@ -32,6 +32,10 @@ const ChatApp = () => {
       display: "flex",
       alignItems: "flex-end",
     });
+    gsap.to(".greeting", {
+      y: -700,
+      duration: 1
+    })
   };
 
   const handleSendMessage = (e) => {
@@ -117,6 +121,7 @@ const ChatApp = () => {
                   <BiSolidChevronRightCircle size="31px"/>
                 </button>
               </div>
+              <div><p className={`caution-message ${isActive? 'active' : ''}`}>Naplo may make mistakes. Please double-check its responses.</p></div>
             </div>
           </form>
         </div>
