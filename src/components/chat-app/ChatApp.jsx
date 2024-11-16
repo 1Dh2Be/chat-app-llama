@@ -3,6 +3,8 @@ import "./ChatApp.css";
 
 //Component & libraries import
 import gsap from "gsap";
+import ChatDiscussion from "../chat-discussion/ChatDiscussion";
+
 
 //Icons import
 import { BiSolidChevronRightCircle } from "react-icons/bi";
@@ -18,6 +20,7 @@ const ChatApp = () => {
 
   //Sees if the input is empty or not
   const [inputText, setInputText] = useState('');
+  const [messages, setMessages] = useState([]);
 
   const textareaRef = useRef(null);
 
@@ -31,30 +34,42 @@ const ChatApp = () => {
     gsap.to(inputRef.current, {
       display: "flex",
       alignItems: "flex-end",
+      justifyContent: "center",
     });
-    gsap.to(".greeting", {
-      y: -700,
-      duration: 0
-    })
+    // gsap.to(".greeting", {
+    //   y: -700,
+    //   duration: 0
+    // })
   };
 
-  const handleSendMessage = (e) => {
+  const handleSendMessage = async (e) => {
     e.preventDefault();
 
-    const message = inputText;
-    const response = askMe(message)
-    .then((message) => {
-      console.log('Response:', message);
-    });
+    // Add user message
+    const userMessage = {
+      type: 'user',
+      text: inputText
+    };
+    setMessages(prev => [...prev, userMessage]);
 
-    console.log(response)
+    // Get bot response
+    try {
+      const response = await askMe(inputText);
+      const botMessage = {
+        type: 'bot',
+        text: response
+      };
+      setMessages(prev => [...prev, botMessage]);
+    } catch (error) {
+      console.error('Error getting response:', error);
+    }
+
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
       textareaRef.current.rows = 1;
     }
-    setInputText('')
-
-    handleClick()
+    setInputText('');
+    handleClick();
   };
 
 
@@ -89,12 +104,16 @@ const ChatApp = () => {
 
         <div className="middle-container">
           {/* Greeting */}
-          <div className="greeting" ref={greetingRef}>
-            <h2>
-              <span className="greeting-text">Good Evening,</span>
-              <span className="name"> Mimoun</span>
-            </h2>
-          </div>
+          {!isActive && (
+            <div className="greeting" ref={greetingRef}>
+              <h2>
+                <span className="greeting-text">Good Evening,</span>
+                <span className="name"> Mimoun</span>
+              </h2>
+            </div>
+          )}
+
+          {isActive && <ChatDiscussion messages={messages} />}
 
           {/* Input Box */}
           <form onSubmit={handleSendMessage} ref={inputRef}>

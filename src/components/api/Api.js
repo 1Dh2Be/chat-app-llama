@@ -20,7 +20,7 @@ async function askMe(ask) {
       ],
       model: 'llama3.2-1b',
       max_tokens: 1000,
-      temperature: 0.7
+      temperature: 0.7,
     });
 
     const message = response.choices[0].message.content;
