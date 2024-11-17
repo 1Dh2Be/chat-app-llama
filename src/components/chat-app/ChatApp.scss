@@ -163,7 +163,7 @@ h1, h2, p {
     display: grid;
     width: 100%;
     box-sizing: border-box;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr auto;
     align-items: center;
     justify-items: center;
     min-height: 525px;
@@ -175,7 +175,7 @@ h1, h2, p {
 .greeting {
     height: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     font-size: 25px;
     background-image: linear-gradient(to right, #6B54C7, #B85F9A 50%, #EE3144);
     background-clip: text;
