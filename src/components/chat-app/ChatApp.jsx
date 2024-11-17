@@ -36,14 +36,13 @@ const ChatApp = () => {
       alignItems: "flex-end",
       justifyContent: "center",
     });
-    // gsap.to(".greeting", {
-    //   y: -700,
-    //   duration: 0
-    // })
   };
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
+
+    setInputText('');
+    handleClick();
 
     // Add user message
     const userMessage = {
@@ -68,8 +67,6 @@ const ChatApp = () => {
       textareaRef.current.style.height = 'auto';
       textareaRef.current.rows = 1;
     }
-    setInputText('');
-    handleClick();
   };
 
 
