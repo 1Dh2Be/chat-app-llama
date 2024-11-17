@@ -133,12 +133,11 @@ h1, h2, p {
   display: grid;
   width: 100%;
   box-sizing: border-box;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 70vh auto;
   align-items: center;
   justify-items: center;
   min-height: 525px;
   flex: 1;
-  padding-bottom: 30px;
   position: relative;
 }
 
@@ -155,8 +154,12 @@ h1, h2, p {
 }
 
 form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   height: 100%;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .input-container {
@@ -171,7 +174,7 @@ form {
 .input-container .caution-message.active {
   display: block;
   position: relative;
-  top: 20px;
+  top: 5px;
   color: white;
   font-size: 12px;
 }
