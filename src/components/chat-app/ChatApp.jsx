@@ -4,7 +4,7 @@ import "./ChatApp.css";
 //Component & libraries import
 import gsap from "gsap";
 import ChatDiscussion from "../chat-discussion/ChatDiscussion";
-
+import askMe from "../api/Api";
 
 //Icons import
 import { BiSolidChevronRightCircle } from "react-icons/bi";
@@ -14,7 +14,6 @@ import { BsPlusCircleFill } from "react-icons/bs";
 import { IoIosSettings } from "react-icons/io";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useRef, useState } from "react";
-import askMe from "../api/Api";
 
 const ChatApp = () => {
 
