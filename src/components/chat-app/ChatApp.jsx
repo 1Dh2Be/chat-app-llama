@@ -2,9 +2,8 @@
 import "./ChatApp.css";
 
 //Component & libraries import
-import gsap from "gsap";
 import ChatDiscussion from "../chat-discussion/ChatDiscussion";
-import askMe from "../api/Api";
+import { handleClick, handleSendMessage, isTextEmpty } from './utils/handlers.js';
 
 //Icons import
 import { BiSolidChevronRightCircle } from "react-icons/bi";
@@ -28,46 +27,17 @@ const ChatApp = () => {
   const greetingRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
 
-  const handleClick = () => {
-    setIsActive(true)
-    gsap.to(inputRef.current, {
-      display: "flex",
-      alignItems: "flex-end",
-      justifyContent: "center",
-    });
+  const handleLocalSendMessage = (e) => {
+    handleSendMessage(
+        e,
+        inputText,
+        setInputText,
+        setMessages,
+        textareaRef,
+        inputRef,
+        setIsActive
+    );
   };
-
-  const handleSendMessage = async (e) => {
-    e.preventDefault();
-
-    setInputText('');
-    handleClick();
-
-    // Add user message
-    const userMessage = {
-      type: 'user',
-      text: inputText
-    };
-    setMessages(prev => [...prev, userMessage]);
-
-    // Get bot response
-    try {
-      const response = await askMe(inputText);
-      const botMessage = {
-        type: 'bot',
-        text: response
-      };
-      setMessages(prev => [...prev, botMessage]);
-    } catch (error) {
-      console.error('Error getting response:', error);
-    }
-
-    if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto';
-      textareaRef.current.rows = 1;
-    }
-  };
-
 
   return (
     <div className="app">
@@ -112,7 +82,7 @@ const ChatApp = () => {
           {isActive && <ChatDiscussion messages={messages} />}
 
           {/* Input Box */}
-          <form onSubmit={handleSendMessage} ref={inputRef}>
+          <form onSubmit={handleLocalSendMessage} ref={inputRef}>
             <div className= "input-container">
               <div className="input-wrapper">
                 <RiImageAddLine id="add-image-icon" className="icon" size="27px"/>
@@ -126,13 +96,31 @@ const ChatApp = () => {
                     e.target.style.height = `${e.target.scrollHeight}px`;
                   }}
                   onKeyDown={(e) => {
-                    if (e.ctrlKey && e.key === "Enter") {
-                      handleSendMessage(e)
+                    if (e.key === "Enter") {
+                      if (e.shiftKey) {
+                        e.preventDefault();
+                        const cursorPosition = e.target.selectionStart;
+                        const textBeforeCursor = inputText.substring(0, cursorPosition);
+                        const textAfterCursor = inputText.substring(cursorPosition);
+                        setInputText(textBeforeCursor + '\n' + textAfterCursor);
+
+                        setTimeout(() => {
+                          const textarea = e.target;
+                          textarea.style.height = 'auto';
+                          textarea.style.height = `${textarea.scrollHeight}px`;
+                        }, 0);
+                      } else {
+                        e.preventDefault();
+                        if (!isTextEmpty(inputText)) {
+                          handleLocalSendMessage(e)
+                          e.target.style.height = 'auto';
+                        }
+                      }
                     }
                   }}
                   rows="1"
                 />
-                <button id="send-button" className="icon" disabled={!inputText} style={{opacity: inputText? 1 : 0.5}}>
+                <button id="send-button" className="icon" disabled={isTextEmpty(inputText)} style={{opacity: !isTextEmpty(inputText)? 1 : 0.5}}>
                   <BiSolidChevronRightCircle size="31px"/>
                 </button>
               </div>
