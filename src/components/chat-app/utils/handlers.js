@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import askMe from "../../api/Api.js";
+import askMe from "../../api/api.js";
 
 export const handleClick = (inputRef, setIsActive) => {
     setIsActive(true);

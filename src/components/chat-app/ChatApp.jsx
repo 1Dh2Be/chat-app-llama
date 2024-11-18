@@ -3,7 +3,7 @@ import "./ChatApp.css";
 
 //Component & libraries import
 import ChatDiscussion from "../chat-discussion/ChatDiscussion";
-import { handleClick, handleSendMessage, isTextEmpty } from './utils/handlers.js';
+import { handleSendMessage, isTextEmpty } from './utils/handlers.js';
 
 //Icons import
 import { BiSolidChevronRightCircle } from "react-icons/bi";
