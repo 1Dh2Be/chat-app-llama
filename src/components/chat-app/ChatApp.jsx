@@ -3,7 +3,7 @@ import "./ChatApp.css";
 
 //Component & libraries import
 import ChatDiscussion from "../chat-discussion/ChatDiscussion";
-import { handleSendMessage, isTextEmpty } from './utils/handlers.js';
+import { handleSendMessage, isTextEmpty, handleNewChat } from './utils/handlers.js';
 
 //Icons import
 import { BiSolidChevronRightCircle } from "react-icons/bi";
@@ -19,6 +19,7 @@ const ChatApp = () => {
   //Sees if the input is empty or not
   const [inputText, setInputText] = useState('');
   const [messages, setMessages] = useState([]);
+  const [isNewChat, setIsNewChat] = useState(false);
 
   const textareaRef = useRef(null);
 
@@ -40,6 +41,8 @@ const ChatApp = () => {
     );
   };
 
+  const newMessage = () => {handleNewChat(messages, setMessages, setIsNewChat, setIsActive)}
+
   return (
     <div className="app">
       {/* Sidebar */}
@@ -47,7 +50,7 @@ const ChatApp = () => {
         <div id="menu-icon" className="icon">
           <GiHamburgerMenu size="21px"/>
         </div>
-        <div id="add-button-icon" className="icon">
+        <div id="add-button-icon" className="icon" onClick={newMessage}>
           <BsPlusCircleFill size="31px"/>
         </div>
         <div className="spacer"></div>
@@ -71,7 +74,7 @@ const ChatApp = () => {
 
         <div className="middle-container">
           {/* Greeting */}
-          {!isActive && (
+          {(!isActive || isNewChat) && (
             <div className="greeting" ref={greetingRef}>
               <h2>
                 <span className="greeting-text">Good Evening,</span>

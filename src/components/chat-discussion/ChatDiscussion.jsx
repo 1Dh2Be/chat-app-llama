@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './ChatDiscussion.css';
 
 const ChatDiscussion = ({ messages }) => {
+
+  const messagesEndRef  = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  },[messages]);
+
   return (
     <div className="chat-discussion">
       <div className="messages-wrapper">
@@ -15,6 +26,7 @@ const ChatDiscussion = ({ messages }) => {
             </div>
           </div>
         ))}
+        <div ref={messagesEndRef} />
       </div>
     </div>
   );

@@ -96,3 +96,15 @@ export const handleSendMessage = async (
 export const isTextEmpty = (text) => {
     return text.trim() === '';
 };
+
+export const handleNewChat  = (messages, setMessages, setIsNewChat, setIsActive) => {
+    if (messages.length > 0) {
+        const confirmed = window.confirm('Start a new chat? Current conversation will be cleared.');
+        if (!confirmed) return;
+    }
+
+    // If user confirmed OR there were no messages to begin with:
+    setMessages([]); // Clear all messages
+    setIsNewChat(true) // Set the new chat state to true
+    setIsActive(false) // Set active state to false to show greeting
+}
