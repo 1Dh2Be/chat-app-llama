@@ -9,7 +9,6 @@ $darkgrey-color: #d4d4d4;
     display: grid;
     grid-template-columns: auto 1fr;
     min-height: 100vh;
-
 }
 
 h1, h2, p {
@@ -26,11 +25,23 @@ h1, h2, p {
 .sidebar {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    box-sizing: border-box;
     background-color: $nabvar-color;
     padding: 20px 0;
     width: 70px;
+    padding-left: 1.5rem;
+    transition: width 0.3s ease;
+
+    &.active {
+        display: flex;
+        align-items: flex-start;
+        box-sizing: border-box;
+        padding-left: 1.5rem;
+        width: 200px;
+
+    }
 
     .spacer {
         flex-grow: 1;
@@ -42,6 +53,8 @@ h1, h2, p {
     }
 
     #menu-icon {
+        position: relative;
+        left: 5px;
         color: $darkgrey-color;
         transition: 0.3s ease;
 
@@ -168,7 +181,6 @@ h1, h2, p {
     justify-items: center;
     min-height: 525px;
     flex: 1;
-    // padding-bottom: 30px;
     position: relative;
 }
 

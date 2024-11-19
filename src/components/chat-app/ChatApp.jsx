@@ -20,6 +20,7 @@ const ChatApp = () => {
   const [inputText, setInputText] = useState('');
   const [messages, setMessages] = useState([]);
   const [isNewChat, setIsNewChat] = useState(false);
+  const [isSideBar, setIsSideBar] = useState(false);
 
   const textareaRef = useRef(null);
 
@@ -49,8 +50,8 @@ const ChatApp = () => {
   return (
     <div className="app">
       {/* Sidebar */}
-      <div className="sidebar">
-        <div id="menu-icon" className="icon">
+      <div className={`sidebar ${isSideBar? 'active' : ''}`}>
+        <div id="menu-icon" className="icon" onClick={() => setIsSideBar(!isSideBar)}>
           <GiHamburgerMenu size="21px"/>
         </div>
         <div id="add-button-icon" className="icon" onClick={newMessage}>

@@ -16,11 +16,21 @@ h1, h2, p {
 .sidebar {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  box-sizing: border-box;
   background-color: #161616;
   padding: 20px 0;
   width: 70px;
+  padding-left: 1.5rem;
+  transition: width 0.3s ease;
+}
+.sidebar.active {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding-left: 1.5rem;
+  width: 200px;
 }
 .sidebar .spacer {
   flex-grow: 1;
@@ -30,6 +40,8 @@ h1, h2, p {
   margin-top: 0.3rem;
 }
 .sidebar #menu-icon {
+  position: relative;
+  left: 5px;
   color: #d4d4d4;
   transition: 0.3s ease;
 }
@@ -133,7 +145,7 @@ h1, h2, p {
   display: grid;
   width: 100%;
   box-sizing: border-box;
-  grid-template-rows: 70vh auto;
+  grid-template-rows: 65vh auto;
   align-items: center;
   justify-items: center;
   min-height: 525px;
