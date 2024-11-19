@@ -41,7 +41,10 @@ const ChatApp = () => {
     );
   };
 
-  const newMessage = () => {handleNewChat(messages, setMessages, setIsNewChat, setIsActive)}
+  const newMessage = () => {
+    handleNewChat(messages, setMessages, setIsNewChat, setIsActive);
+    setIsNewChat(false)
+  }
 
   return (
     <div className="app">
