@@ -33,6 +33,7 @@ const ChatApp = () => {
         inputText,
         setInputText,
         setMessages,
+        messages,
         textareaRef,
         inputRef,
         setIsActive
