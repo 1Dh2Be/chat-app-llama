@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import ReactMarkdown from 'react-markdown';
 import './ChatDiscussion.css';
 
 const ChatDiscussion = ({ messages }) => {
@@ -22,7 +23,7 @@ const ChatDiscussion = ({ messages }) => {
             className={`message ${message.type === 'user' ? 'user-message' : 'bot-message'}`}
           >
             <div className="message-content">
-              {message.text}
+              <ReactMarkdown>{message.text}</ReactMarkdown>
             </div>
           </div>
         ))}

@@ -11,7 +11,13 @@ async function askMeOpenAi(ask, messageHistory, onUpdate) {
 
     let fullResponse = '';
 
+    const systemPrompt = {
+        role: 'system',
+        content: 'Format your responses using markdown'
+    }
+
     const messages = [
+        systemPrompt,
         ...messageHistory,
         { role: 'user', content: ask }
     ]
@@ -19,7 +25,7 @@ async function askMeOpenAi(ask, messageHistory, onUpdate) {
     const stream = await openAiClient.chat.completions.create({
         model: "llama3.2-11b-vision",
         messages: messages,
-        stream: true, // Enable streaming
+        stream: true,
     });
 
     for await (const chunk of stream) {
@@ -32,5 +38,3 @@ async function askMeOpenAi(ask, messageHistory, onUpdate) {
 }
 
 export default askMeOpenAi
-
-askMeOpenAi("Write a small story about bill gates").catch(console.error);

@@ -192,15 +192,15 @@ h1, h2, p {
     background-image: linear-gradient(to right, #6B54C7, #B85F9A 50%, #EE3144);
     background-clip: text;
     color: transparent;
-    margin-bottom: 1rem;
 }
 
 form {
     display: flex;
-    justify-content: center;
     align-items: flex-end;
-    height: 100%;
+    justify-content: center;
+    height: fit-content;
     width: 100%;
+    height: 100%;
     margin-bottom: 2rem;
 }
 
@@ -268,11 +268,6 @@ form {
                 background: rgba(255, 255, 255, 0.5);  // color when hovering
                 cursor: default;
             }
-
-            // // For Firefox
-            // scrollbar-width: thin;
-            // scrollbar-color: #4A4A4A transparent;
-            // padding-right: 50px;
         }
 
         #add-image-icon {

@@ -54,4 +54,20 @@
   color: white;
   font-size: 16px;
   line-height: 1.4;
+}
+
+/* Style markdown elements */
+.message-content h1 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.message-content h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.message-content ul, .message-content ol {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
 }/*# sourceMappingURL=ChatDiscussion.css.map */
