@@ -56,7 +56,6 @@ h1, h2, p {
         position: relative;
         left: 5px;
         color: $darkgrey-color;
-        transition: 0.3s ease;
 
         &::before {
             content: '';
@@ -67,7 +66,6 @@ h1, h2, p {
             background-color: currentColor;
             opacity: 0;
             transform: scale(1);
-            transition: all 0.3s ease-out;
           }
 
           &:hover::before {
@@ -90,7 +88,6 @@ h1, h2, p {
             background-color: currentColor;
             opacity: 0;
             transform: scale(1);
-            transition: all 0.3s ease-out;
           }
 
           &:hover::before {
@@ -150,28 +147,6 @@ h1, h2, p {
     }
 }
 
-.left-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-
-    &:hover {
-        background-color: rgba($color: $darkgrey-color, $alpha: 0.1);
-        border-radius: 10px;
-    }
-
-    h1 {
-        margin: 5px 7px;
-    }
-
-    .icon {
-        margin: 6px 5px 0 0;
-        cursor: pointer;
-    }
-}
-
 .middle-container {
     display: grid;
     width: 100%;
@@ -189,7 +164,7 @@ h1, h2, p {
     display: flex;
     align-items: center;
     font-size: 25px;
-    background-image: linear-gradient(to right, #6B54C7, #B85F9A 50%, #EE3144);
+    background-image: linear-gradient(to right, #4169E1, #6B54C7, #B85F9A 50%, #EE3144);
     background-clip: text;
     color: transparent;
 }

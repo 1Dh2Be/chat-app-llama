@@ -1,5 +1,6 @@
 import OpenAI from "openai";
 import { API_KEY } from "./apiKey.js"
+import { useModel } from "../chat-app/components/model-selection/ModelContext.js";
 
 const openAiClient = new OpenAI({
     apiKey: API_KEY,
@@ -7,7 +8,7 @@ const openAiClient = new OpenAI({
     dangerouslyAllowBrowser: true
 })
 
-async function askMeOpenAi(ask, messageHistory, onUpdate) {
+async function askMeOpenAi(ask, messageHistory, onUpdate, selectedModel) {
 
     let fullResponse = '';
 
@@ -23,7 +24,7 @@ async function askMeOpenAi(ask, messageHistory, onUpdate) {
     ]
 
     const stream = await openAiClient.chat.completions.create({
-        model: "llama3.2-11b-vision",
+        model: selectedModel,
         messages: messages,
         stream: true,
     });
@@ -33,7 +34,7 @@ async function askMeOpenAi(ask, messageHistory, onUpdate) {
         fullResponse += content;
         if (onUpdate) onUpdate(fullResponse);
     }
-
+    
     return fullResponse;
 }
 

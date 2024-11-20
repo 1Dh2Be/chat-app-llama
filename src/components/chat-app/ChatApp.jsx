@@ -11,8 +11,9 @@ import { RiImageAddLine } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsPlusCircleFill } from "react-icons/bs";
 import { IoIosSettings } from "react-icons/io";
-import { RiArrowDropDownLine } from "react-icons/ri";
 import { useRef, useState } from "react";
+import ModelDropDown from "./components/model-selection/ModelDropDown.jsx";
+import { useModel } from "./components/model-selection/ModelContext.js";
 
 const ChatApp = () => {
 
@@ -21,6 +22,7 @@ const ChatApp = () => {
   const [messages, setMessages] = useState([]);
   const [isNewChat, setIsNewChat] = useState(false);
   const [isSideBar, setIsSideBar] = useState(false);
+  const { selectedModel } = useModel();
 
   const textareaRef = useRef(null);
 
@@ -38,7 +40,8 @@ const ChatApp = () => {
         messages,
         textareaRef,
         inputRef,
-        setIsActive
+        setIsActive,
+        selectedModel
     );
   };
 
@@ -67,10 +70,7 @@ const ChatApp = () => {
       <div className="main-content">
         {/* Header */}
         <header className="header">
-          <section className="left-section">
-            <h1>Models</h1>
-            <RiArrowDropDownLine className="icon" size="25px"/>
-          </section>
+          <ModelDropDown />
           <section className="right-section">
             <div className="profile-icon">MI</div>
           </section>

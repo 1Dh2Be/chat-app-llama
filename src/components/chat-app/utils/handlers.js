@@ -18,7 +18,8 @@ export const handleSendMessage = async (
     messages,
     textareaRef,
     inputRef,
-    setIsActive
+    setIsActive,
+    selectedModel
 ) => {
     e.preventDefault();
     setInputText('');
@@ -59,7 +60,8 @@ export const handleSendMessage = async (
                     };
                     return newMessages;
                 });
-            }
+            },
+            selectedModel
         ).then((finalResponse) => {
             // Update with final response and remove streaming flag
             setMessages(prev => {
