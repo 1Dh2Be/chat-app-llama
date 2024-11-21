@@ -11,10 +11,6 @@ $darkgrey-color: #d4d4d4;
     min-height: 100vh;
 }
 
-h1, h2, p {
-    font-family: "supreme";
-}
-
 .icon {
     color: white;
     cursor: pointer;
@@ -31,16 +27,26 @@ h1, h2, p {
     background-color: $nabvar-color;
     padding: 20px 0;
     width: 70px;
-    padding-left: 1.5rem;
+    padding-left: 1.2rem;
     transition: width 0.3s ease;
+
+    .icon-text {
+        display: none;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+    }
 
     &.active {
         display: flex;
         align-items: flex-start;
         box-sizing: border-box;
-        padding-left: 1.5rem;
+        padding-left: 1.2rem;
         width: 200px;
 
+        .icon-text {
+            display: block;
+        }
     }
 
     .spacer {
@@ -79,6 +85,11 @@ h1, h2, p {
     }
 
     #settings-button-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
         &::before {
             content: '';
             position: absolute;
@@ -221,7 +232,6 @@ form {
             color: white;
             font-size: 18px;
             line-height: 1.5;
-            font-family: 'supreme';
 
            // For Webkit browsers (Chrome, Safari, newer versions of Edge)
            &::-webkit-scrollbar {

@@ -1,6 +1,5 @@
 import OpenAI from "openai";
 import { API_KEY } from "./apiKey.js"
-import { useModel } from "../chat-app/components/model-selection/ModelContext.js";
 
 const openAiClient = new OpenAI({
     apiKey: API_KEY,
@@ -14,7 +13,16 @@ async function askMeOpenAi(ask, messageHistory, onUpdate, selectedModel) {
 
     const systemPrompt = {
         role: 'system',
-        content: 'Format your responses using markdown'
+        content: `Format your responses using markdown.
+        When sharing code, use triple backticks with the language name, like this:
+        \`\`\`python
+        print("Hello World")
+        \`\`\`
+        Use markdown features for:
+        - Code blocks with syntax highlighting
+        - Lists
+        - Headers
+        - Emphasis when needed`
     }
 
     const messages = [
@@ -34,7 +42,7 @@ async function askMeOpenAi(ask, messageHistory, onUpdate, selectedModel) {
         fullResponse += content;
         if (onUpdate) onUpdate(fullResponse);
     }
-    
+
     return fullResponse;
 }
 

@@ -26,7 +26,7 @@ const ChatApp = () => {
 
   const textareaRef = useRef(null);
 
-  //This is for the animation to put hte input bar to the botom
+  //This is for the animation to put the input bar to the botom
   const inputRef = useRef(null);
   const greetingRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
@@ -63,6 +63,7 @@ const ChatApp = () => {
         <div className="spacer"></div>
         <div id="settings-button-icon" className="icon">
           <IoIosSettings size="27px"/>
+          <span className="icon-text">Settings</span>
         </div>
       </div>
 
