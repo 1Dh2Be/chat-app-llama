@@ -1,0 +1,87 @@
+form {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input-container .caution-message {
+  display: none;
+}
+.input-container .caution-message.active {
+  display: block;
+  position: relative;
+  top: 20px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+}
+.input-container .input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 80vw;
+  position: relative;
+}
+.input-container .input-wrapper textarea {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 750px;
+  min-height: 55px;
+  max-height: 350px;
+  border-radius: 30px;
+  border: none;
+  background-color: rgba(60, 64, 66, 0.5);
+  padding: 13px 55px;
+  resize: none;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.input-container .input-wrapper textarea::-webkit-scrollbar {
+  width: 8px;
+}
+.input-container .input-wrapper textarea::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 40px;
+  padding: 15px 0;
+}
+.input-container .input-wrapper textarea::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+.input-container .input-wrapper textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+  cursor: default;
+}
+.input-container .input-wrapper #add-image-icon {
+  position: relative;
+  top: -15px;
+  left: 40px;
+  color: white;
+  cursor: pointer;
+}
+.input-container .input-wrapper #send-button {
+  position: relative;
+  top: -10px;
+  right: 40px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transform: rotate(-90deg);
+}
+.input-container .input-wrapper #send-button:disabled {
+  cursor: default;
+}/*# sourceMappingURL=TextArea.css.map */
