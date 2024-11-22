@@ -5,25 +5,24 @@
   overflow-y: auto;
   height: calc(100vh - 180px);
 
-    /* Customize the scroll bar */
-    &::-webkit-scrollbar {
-      width: 15px;
-    }
+  /* Customize the scroll bar */
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
 
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.2);; /* Change the color to dark grey */
-      // border-radius: 3px;
-    }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: rgba(255, 255, 255, 0.3);; /* Change the hover color if desired */
-    }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
 
-    /* Add indicators to the top and bottom of the scroll bar */
+  /* Add indicators to the top and bottom of the scroll bar */
   &::-webkit-scrollbar-button {
     display: block;
     height: 12px;
@@ -62,20 +61,96 @@
 
   &-content {
     width: 100%;
-    padding: 12px 16px;
-    border-radius: 8px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
+  }
+}
 
-    ul,
-    li {
-      white-space: normal;
-      word-break: break-word;
+.code-block {
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1rem 0;
+  align-items: center;
+  background-color: #2d2d2d;
+  padding: 8px 12px;
+  font-size: 0.9em;
+  color: #ececf1;
+  border-bottom: 1px solid #393939;
+
+  span {
+    color: #858585;
+    font-family: monospace;
+  }
+}
+
+.copy-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  gap: 5px;
+  color: #858585;
+  padding: 4px 8px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.code-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    color: #858585;
+  }
+}
+
+.bot-message {
+  display: flex;
+  justify-content: flex-start;
+  
+  .message-content {
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #ececf1;
+
+    // Markdown specific styles
+    h1 { 
+      margin-top: 1.5em;
+      margin-bottom: 1em;
+    }
+    h2 {
+      margin-top: 1.5em;
+      margin-bottom: 1em;
+    }
+    h3 {
+      margin-top: 1.2em;
+      margin-bottom: 0.8em;
+    }
+    p {
+      margin-bottom: 1em;
+      line-height: 1.6;
+    }
+    ul, ol {
+      margin-top: 1em;
+      margin-bottom: 1em;
       margin-left: 20px;
     }
+    li {
+      margin-bottom: 0.5em;
+      white-space: normal;
+      word-break: break-word;
+    }
+    blockquote {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding-left: 1em;
+      border-left: 3px solid #4a4a4a;
+      color: #ececf1;
+    }
 
-    //This is the code blocks (Only when code is written)
     pre {
       max-width: 100%;
       white-space: pre-wrap;
@@ -101,24 +176,10 @@
     }
 
     :not(pre) > code {
-      background-color: #2d2d2d;
       padding: 0.2em 0.4em;
       border-radius: 3px;
       font-size: 0.9em;
     }
-  }
-}
-
-.code-block-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.bot-message {
-  display: flex;
-  justify-content: flex-start;
-  .message-content {
-    color: #ececf1;
   }
 }
 
@@ -131,5 +192,6 @@
     background-color: rgba($color: #3C4042, $alpha: 0.5);
     border-radius: 25px;
     color: #ececf1;
+    padding: 12px 16px;
   }
 }
