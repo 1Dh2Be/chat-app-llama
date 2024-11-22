@@ -17,7 +17,7 @@ const ChatDiscussion = ({ messages }) => {
 
   return (
     <div className="chat-discussion">
-      <div className='test'>
+      <div className='discussion-container'>
       {messages.map((message, index) => (
         <div
           key={index}

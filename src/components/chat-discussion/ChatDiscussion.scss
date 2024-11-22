@@ -3,22 +3,22 @@
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 180px);
 
     /* Customize the scroll bar */
     &::-webkit-scrollbar {
       width: 15px;
     }
-  
+
     &::-webkit-scrollbar-track {
       background: transparent;
     }
-  
+
     &::-webkit-scrollbar-thumb {
       background-color: rgba(255, 255, 255, 0.2);; /* Change the color to dark grey */
       // border-radius: 3px;
     }
-  
+
     &::-webkit-scrollbar-thumb:hover {
       background-color: rgba(255, 255, 255, 0.3);; /* Change the hover color if desired */
     }
@@ -50,7 +50,7 @@
   }
 }
 
-.test {
+.discussion-container {
   max-width: 750px;
   margin: 0 auto;
 }

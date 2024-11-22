@@ -3,7 +3,7 @@
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 180px);
   /* Customize the scroll bar */
   /* Add indicators to the top and bottom of the scroll bar */
 }
@@ -40,7 +40,7 @@
   background-size: 10px;
 }
 
-.test {
+.discussion-container {
   max-width: 750px;
   margin: 0 auto;
 }
