@@ -1,16 +1,48 @@
 .chat-discussion {
-  flex-grow: 1;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
   overflow-y: auto;
-  height: 100%;
-  position: relative;
-  max-width: 750px;
+  height: calc(100vh - 150px);
+  /* Customize the scroll bar */
+  /* Add indicators to the top and bottom of the scroll bar */
+}
+.chat-discussion::-webkit-scrollbar {
+  width: 15px;
+}
+.chat-discussion::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chat-discussion::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2); /* Change the color to dark grey */
+}
+.chat-discussion::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Change the hover color if desired */
+}
+.chat-discussion::-webkit-scrollbar-button {
+  display: block;
+  height: 12px;
+  background-color: transparent;
+}
+.chat-discussion::-webkit-scrollbar-button:vertical:start:decrement, .chat-discussion::-webkit-scrollbar-button:vertical:end:increment {
+  display: block;
+}
+.chat-discussion::-webkit-scrollbar-button:vertical:start:decrement {
+  background-image: url("./arrow-up2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+.chat-discussion::-webkit-scrollbar-button:vertical:end:increment {
+  background-image: url("./down.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
 }
 
-.messages-wrapper {
-  display: flex;
-  max-width: 60vw;
-  flex-direction: column;
-  padding: 20px;
+.test {
+  max-width: 750px;
+  margin: 0 auto;
 }
 
 .message {

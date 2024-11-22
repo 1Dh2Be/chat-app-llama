@@ -8,7 +8,7 @@ const ChatDiscussion = ({ messages }) => {
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -17,51 +17,51 @@ const ChatDiscussion = ({ messages }) => {
 
   return (
     <div className="chat-discussion">
-      <div className="messages-wrapper">
-        {messages.map((message, index) => (
-          <div
-            key={index}
-            className={`message ${message.type === 'user' ? 'user-message' : 'bot-message'}`}
-          >
-            <div className="message-content">
-              <ReactMarkdown
-                components={{
-                  code({node, inline, className, children, ...props}) {
-                    const match = /language-(\w+)/.exec(className || '');
-                    return !inline && match ? (
-                      <div className="code-block">
-                        <div className="code-block-header">
-                          <span>{match[1]}</span>
-                          <button
-                            onClick={() => navigator.clipboard.writeText(String(children))}
-                            className="copy-button"
-                          >
-                            Copy code
-                          </button>
-                        </div>
-                        <SyntaxHighlighter
-                          style={vscDarkPlus}
-                          language={match[1]}
-                          PreTag="div"
-                          {...props}
+      <div className='test'>
+      {messages.map((message, index) => (
+        <div
+          key={index}
+          className={`message ${message.type === 'user' ? 'user-message' : 'bot-message'}`}
+        >
+          <div className="message-content">
+            <ReactMarkdown
+              components={{
+                code({ node, inline, className, children, ...props }) {
+                  const match = /language-(\w+)/.exec(className || '');
+                  return !inline && match ? (
+                    <div className="code-block">
+                      <div className="code-block-header">
+                        <span>{match[1]}</span>
+                        <button
+                          onClick={() => navigator.clipboard.writeText(String(children))}
+                          className="copy-button"
                         >
-                          {String(children).replace(/\n$/, '')}
-                        </SyntaxHighlighter>
+                          Copy code
+                        </button>
                       </div>
-                    ) : (
-                      <code className={className} {...props}>
-                        {children}
-                      </code>
-                    )
-                  }
-                }}
-              >
-                {message.text}
-              </ReactMarkdown>
-            </div>
+                      <SyntaxHighlighter
+                        style={vscDarkPlus}
+                        language={match[1]}
+                        PreTag="div"
+                        {...props}
+                      >
+                        {String(children).replace(/\n$/, '')}
+                      </SyntaxHighlighter>
+                    </div>
+                  ) : (
+                    <code className={className} {...props}>
+                      {children}
+                    </code>
+                  );
+                },
+              }}
+            >
+              {message.text}
+            </ReactMarkdown>
           </div>
-        ))}
-        <div ref={messagesEndRef} />
+        </div>
+      ))}
+      <div ref={messagesEndRef} />
       </div>
     </div>
   );
