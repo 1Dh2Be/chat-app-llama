@@ -1,6 +1,7 @@
 import "./ModelDropDown.css"
 import { useRef, useState, useEffect } from "react"
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import { useModel } from "./ModelContext";
 
 
@@ -52,6 +53,9 @@ const ModelDropDown = () => {
               {models.map((model, index) => (
                 <div key={index} className="dropdown-item" onClick={() => {handleModelSelect(model)}}>
                   {model}
+                  {model === selectedModel && (
+                    <IoCheckmarkCircleOutline className="selected-icon" size="14px"/>
+                  )}
                 </div>
               ))}
             </div>

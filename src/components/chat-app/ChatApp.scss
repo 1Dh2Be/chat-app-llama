@@ -271,6 +271,7 @@ form {
             border: none;
             color: white;
             cursor: pointer;
+            transform: rotate(-90deg);
 
             &:disabled {
                 cursor: default;

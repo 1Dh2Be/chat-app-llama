@@ -3,6 +3,9 @@ import "./ChatApp.css";
 
 //Component & libraries import
 import ChatDiscussion from "../chat-discussion/ChatDiscussion";
+import { useRef, useState } from "react";
+import ModelDropDown from "./components/model-selection/ModelDropDown.jsx";
+import { useModel } from "./components/model-selection/ModelContext.js";
 import { handleSendMessage, isTextEmpty, handleNewChat } from './utils/handlers.js';
 
 //Icons import
@@ -11,9 +14,7 @@ import { RiImageAddLine } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsPlusCircleFill } from "react-icons/bs";
 import { IoIosSettings } from "react-icons/io";
-import { useRef, useState } from "react";
-import ModelDropDown from "./components/model-selection/ModelDropDown.jsx";
-import { useModel } from "./components/model-selection/ModelContext.js";
+import { FaCircleArrowRight } from "react-icons/fa6";
 
 const ChatApp = () => {
 
@@ -97,7 +98,7 @@ const ChatApp = () => {
                 <RiImageAddLine id="add-image-icon" className="icon" size="27px"/>
                 <textarea
                   ref={textareaRef}
-                  placeholder="What's on your mind?"
+                  placeholder="Ask llama"
                   value={inputText}
                   onChange={(e) => {
                     setInputText(e.target.value);
@@ -130,7 +131,7 @@ const ChatApp = () => {
                   rows="1"
                 />
                 <button id="send-button" className="icon" disabled={isTextEmpty(inputText)} style={{opacity: !isTextEmpty(inputText)? 1 : 0.5}}>
-                  <BiSolidChevronRightCircle size="31px"/>
+                  <FaCircleArrowRight size="31px"/>
                 </button>
               </div>
               <div><p className={`caution-message ${isActive? 'active' : ''}`}>Naplo may make mistakes. Please double-check its responses.</p></div>

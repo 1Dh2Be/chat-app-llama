@@ -236,6 +236,7 @@ form {
   border: none;
   color: white;
   cursor: pointer;
+  transform: rotate(-90deg);
 }
 .input-container .input-wrapper #send-button:disabled {
   cursor: default;
