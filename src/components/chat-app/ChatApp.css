@@ -26,6 +26,7 @@
   color: white;
   font-size: 14px;
   font-weight: 500;
+  white-space: nowrap;
 }
 .sidebar.active {
   display: flex;
@@ -36,6 +37,9 @@
 }
 .sidebar.active .icon-text {
   display: block;
+}
+.sidebar.active #add-button-icon {
+  padding-right: 0.5em;
 }
 .sidebar .spacer {
   flex-grow: 1;
@@ -64,6 +68,15 @@
   transform: scale(1.6);
 }
 .sidebar #add-button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.1em;
+  border-radius: 20px;
+  background-color: #3b3b3b;
   margin-top: 40px;
 }
 .sidebar #settings-button-icon {

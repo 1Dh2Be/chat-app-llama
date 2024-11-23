@@ -6,12 +6,12 @@ import ChatDiscussion from "../chat-discussion/ChatDiscussion";
 import { useRef, useState } from "react";
 import ModelDropDown from "./components/model-selection/ModelDropDown.jsx";
 import { handleNewChat } from './utils/handlers.js';
+import TextArea from "./components/text-area/TextArea.jsx";
 
 //Icons import
 import { GiHamburgerMenu } from "react-icons/gi";
-import { BsPlusCircleFill } from "react-icons/bs";
 import { IoIosSettings } from "react-icons/io";
-import TextArea from "./components/text-area/TextArea.js";
+import { GoPlus } from "react-icons/go";
 
 const ChatApp = () => {
 
@@ -33,14 +33,15 @@ const ChatApp = () => {
       {/* Sidebar */}
       <div className={`sidebar ${isSideBar? 'active' : ''}`}>
         <div id="menu-icon" className="icon" onClick={() => setIsSideBar(!isSideBar)}>
-          <GiHamburgerMenu size="21px"/>
+          <GiHamburgerMenu size="16px"/>
         </div>
         <div id="add-button-icon" className="icon" onClick={newMessage}>
-          <BsPlusCircleFill size="31px"/>
+          <GoPlus size="31px"/>
+          <span className="icon-text">New chat</span>
         </div>
         <div className="spacer"></div>
         <div id="settings-button-icon" className="icon">
-          <IoIosSettings size="27px"/>
+          <IoIosSettings size="22px"/>
           <span className="icon-text">Settings</span>
         </div>
       </div>

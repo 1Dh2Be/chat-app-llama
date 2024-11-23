@@ -39,7 +39,7 @@ const TextArea = ({messages, setMessages, isActive, setIsActive}) => {
             <RiImageAddLine id="add-image-icon" className="icon" size="27px"/>
             <textarea
               ref={textareaRef}
-              placeholder="Ask llama"
+              placeholder="Message me"
               value={inputText}
               onChange={(e) => {
                 setInputText(e.target.value);
