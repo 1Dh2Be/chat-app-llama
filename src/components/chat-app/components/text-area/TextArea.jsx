@@ -75,7 +75,7 @@ const TextArea = ({messages, setMessages, isActive, setIsActive}) => {
               <FaCircleArrowRight size="31px"/>
             </button>
           </div>
-          <div><p className={`caution-message ${isActive? 'active' : ''}`}>Naplo may make mistakes. Please double-check its responses.</p></div>
+          <div><p className="caution-message">Naplo may make mistakes. Please double-check its responses.</p></div>
         </div>
       </form>
     )

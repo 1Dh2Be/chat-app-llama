@@ -1,5 +1,5 @@
-$nabvar-color: #161616;
-$main-section-color: #1E1E1E;
+$main-section-color: #161616;
+$navbar-color: #1E1E1E;
 $darkgrey-color: #d4d4d4;
 
 
@@ -24,7 +24,7 @@ $darkgrey-color: #d4d4d4;
     align-items: flex-start;
     justify-content: space-between;
     box-sizing: border-box;
-    background-color: $nabvar-color;
+    background-color: $navbar-color;
     padding: 20px 0;
     width: 70px;
     padding-left: 1.2rem;
@@ -184,9 +184,11 @@ $darkgrey-color: #d4d4d4;
 }
 
 .greeting {
-    height: 85%;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-size: 25px;
     background-image: linear-gradient(to right, #4169E1, #6B54C7, #B85F9A 50%, #EE3144);
     background-clip: text;
