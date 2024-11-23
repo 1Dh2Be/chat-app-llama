@@ -74,7 +74,6 @@ export const handleSendMessage = async (
                 return newMessages;
             });
         });
-
     } catch (error) {
         console.error('Error getting response:', error);
         // Handle error by updating the last message
@@ -109,4 +108,78 @@ export const handleNewChat  = (messages, setMessages, setIsNewChat, setIsActive)
     setMessages([]); // Clear all messages
     setIsNewChat(true) // Set the new chat state to true
     setIsActive(false) // Set active state to false to show greeting
+}
+
+
+export const handleCardClick = async (
+    text,
+    messages,
+    setMessages,
+    setIsActive,
+    selectedModel
+) => {
+
+    setIsActive(true)
+    // Create message history format for API
+    const messageHistory = messages.map(msg => ({
+        role: msg.type === 'user' ? 'user' : 'assistant',
+        content: msg.text
+    }));
+
+    // Add user message (card text)
+    const userMessage = {
+        type: 'user',
+        text: text
+    };
+    setMessages(prev => [...prev, userMessage]);
+
+    try {
+        // Add initial empty bot message
+        setMessages(prev => [...prev, {
+            type: 'bot',
+            text: '',
+            isStreaming: true
+        }]);
+
+        // Call API with streaming updates
+        await askMeOpenAi(
+            text,
+            messageHistory,
+            (partialResponse) => {
+                // Update the bot message as new content arrives
+                setMessages(prev => {
+                    const newMessages = [...prev];
+                    newMessages[newMessages.length - 1] = {
+                        type: 'bot',
+                        text: partialResponse,
+                        isStreaming: true
+                    };
+                    return newMessages;
+                });
+            },
+            selectedModel
+        ).then((finalResponse) => {
+            // Update with final response and remove streaming flag
+            setMessages(prev => {
+                const newMessages = [...prev];
+                newMessages[newMessages.length - 1] = {
+                    type: 'bot',
+                    text: finalResponse,
+                    isStreaming: false
+                };
+                return newMessages;
+            });
+        });
+    } catch (error) {
+        console.error('Error getting response:', error);
+        setMessages(prev => {
+            const newMessages = [...prev];
+            newMessages[newMessages.length - 1] = {
+                type: 'bot',
+                text: 'Sorry, there was an error processing your request.',
+                isError: true
+            };
+            return newMessages;
+        });
+    }
 }

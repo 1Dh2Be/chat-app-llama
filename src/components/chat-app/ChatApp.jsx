@@ -3,15 +3,17 @@ import "./ChatApp.css";
 
 //Component & libraries import
 import ChatDiscussion from "../chat-discussion/ChatDiscussion";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import ModelDropDown from "./components/model-selection/ModelDropDown.jsx";
 import { handleNewChat } from './utils/handlers.js';
+import { cardsData } from "./components/cards/cards-data.js";
 import TextArea from "./components/text-area/TextArea.jsx";
 
 //Icons import
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosSettings } from "react-icons/io";
 import { GoPlus } from "react-icons/go";
+import PromptCards from "./components/cards/PromptCards.jsx";
 
 const ChatApp = () => {
 
@@ -20,7 +22,6 @@ const ChatApp = () => {
   const [isNewChat, setIsNewChat] = useState(false);
   const [isSideBar, setIsSideBar] = useState(false);
 
-  const greetingRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
 
   const newMessage = () => {
@@ -59,11 +60,23 @@ const ChatApp = () => {
         <div className="middle-container">
           {/* Greeting */}
           {(!isActive || isNewChat) && (
-            <div className="greeting" ref={greetingRef}>
+            <div className="greeting">
               <h2>
-                <span className="greeting-text">Good Evening,</span>
+                <span className="greeting-text">Hello,</span>
                 <span className="name"> Mimoun</span>
               </h2>
+              <div className="cards">
+                {cardsData.map((data, index) => (
+                  <PromptCards
+                    key={index}
+                    text={data.text}
+                    icon={data.icon}
+                    messages={messages}
+                    setMessages={setMessages}
+                    setIsActive={setIsActive}
+                  />
+                ))}
+            </div>
             </div>
           )}
 
