@@ -39,7 +39,7 @@ const ModelDropDown = () => {
     }
 
     const getCurrentModelKey = () => {
-      return Object.keys(selectedModel)[0]
+      return Object.keys(selectedModel)
     }
 
     return (

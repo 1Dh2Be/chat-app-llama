@@ -32,8 +32,8 @@ form {
   align-items: center;
   flex-grow: 1;
   max-width: 750px;
-  min-height: 55px;
-  max-height: 350px;
+  min-height: 60px;
+  max-height: 100px;
   border-radius: 30px;
   border: none;
   background-color: rgba(60, 64, 66, 0.5);
@@ -41,8 +41,17 @@ form {
   resize: none;
   outline: none;
   color: white;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 2;
+  padding-left: 30px;
+}
+.input-container .input-wrapper textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  text-align: left;
+}
+.input-container .input-wrapper textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  text-align: left;
 }
 .input-container .input-wrapper textarea::-webkit-scrollbar {
   width: 8px;
@@ -60,16 +69,9 @@ form {
   background: rgba(255, 255, 255, 0.5);
   cursor: default;
 }
-.input-container .input-wrapper #add-image-icon {
-  position: relative;
-  top: -15px;
-  left: 40px;
-  color: white;
-  cursor: pointer;
-}
 .input-container .input-wrapper #send-button {
   position: relative;
-  top: -10px;
+  top: -15px;
   right: 40px;
   background: none;
   border: none;

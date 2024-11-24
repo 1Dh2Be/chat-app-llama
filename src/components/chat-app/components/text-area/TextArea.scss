@@ -32,8 +32,8 @@ form {
             align-items: center;
             flex-grow: 1;
             max-width: 750px;
-            min-height: 55px;
-            max-height: 350px;
+            min-height: 60px;
+            max-height: 100px;
             border-radius: 30px;
             border: none;
             background-color: rgba($color: #3C4042, $alpha: 0.5);
@@ -41,8 +41,14 @@ form {
             resize: none;
             outline: none;
             color: white;
-            font-size: 18px;
-            line-height: 1.5;
+            font-size: 16px;
+            line-height: 2;
+            padding-left: 30px;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+                text-align:left;
+            }
 
            // For Webkit browsers (Chrome, Safari, newer versions of Edge)
            &::-webkit-scrollbar {
@@ -66,18 +72,9 @@ form {
             }
         }
 
-        #add-image-icon {
-            position: relative;
-            top: -15px;
-            left: 40px;
-            color: white;
-            cursor: pointer;
-
-        }
-
         #send-button {
             position: relative;
-            top: -10px;
+            top: -15px;
             right: 40px;
             background: none;
             border: none;

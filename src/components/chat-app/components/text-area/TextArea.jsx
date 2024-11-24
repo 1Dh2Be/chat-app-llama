@@ -1,5 +1,4 @@
 import "./TextArea.css"
-import { useRef, useState } from 'react';
 import { handleSendMessage, isTextEmpty } from '../../utils/handlers.js';
 import { useModel } from '../model-selection/ModelContext.js';
 import { useTextArea } from './TextAreaContext.js'
@@ -15,6 +14,8 @@ const TextArea = ({messages, setMessages, setIsActive}) => {
     const { selectedModel } = useModel();
 
     const model = selectedModel[Object.keys(selectedModel)]
+
+    const modelName = Object.keys(selectedModel)
 
     const handleLocalSendMessage = (e) => {
         handleSendMessage(
@@ -35,10 +36,9 @@ const TextArea = ({messages, setMessages, setIsActive}) => {
         <form onSubmit={handleLocalSendMessage} ref={inputRef}>
         <div className= "input-container">
           <div className="input-wrapper">
-            <RiImageAddLine id="add-image-icon" className="icon" size="27px"/>
             <textarea
               ref={textareaRef}
-              placeholder="Message me"
+              placeholder={`Ask ${modelName}`}
               value={inputText}
               onChange={(e) => {
                 setInputText(e.target.value);
@@ -74,7 +74,7 @@ const TextArea = ({messages, setMessages, setIsActive}) => {
               <FaCircleArrowRight size="31px"/>
             </button>
           </div>
-          <div><p className="caution-message">Naplo may make mistakes. Please double-check its responses.</p></div>
+          <div><p className="caution-message">Neptune may make mistakes. Please double-check its responses.</p></div>
         </div>
       </form>
     )
