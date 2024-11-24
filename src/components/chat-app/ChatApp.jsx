@@ -62,8 +62,8 @@ const ChatApp = () => {
           {(!isActive || isNewChat) && (
             <div className="greeting">
               <h2>
-                <span className="greeting-text">Hello,</span>
-                <span className="name"> Mimoun</span>
+                <span className="greeting-text">Hello, Mimoun<br/></span>
+                <span>What's the subject for today?</span>
               </h2>
               <div className="cards">
                 {cardsData.map((data, index) => (

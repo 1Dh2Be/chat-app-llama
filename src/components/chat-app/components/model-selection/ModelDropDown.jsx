@@ -12,9 +12,8 @@ const ModelDropDown = () => {
     const dropdownRef  = useRef(null)
 
     const models = [
-        'llama3.1-405b',
-        'llama3.2-90b-vision',
-        'llama3.2-11b-vision'
+        'mistral-7b-instruct',
+        'mixtral-8x22b-instruct'
     ]
 
     useEffect(() => {

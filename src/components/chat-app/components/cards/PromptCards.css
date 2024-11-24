@@ -1,11 +1,57 @@
+.card-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
 .card-container {
+  position: relative;
   border-radius: 10px;
   width: 250px;
   height: 200px;
   background-color: #1e1e1e;
   color: white;
+  cursor: pointer;
 }
 
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.card-container::after, .card-container::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: conic-gradient(from var(--angle), #4169E1, #6B54C7, #B85F9A, #EE3144, #4169E1);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -2;
+  padding: 3px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-container::before {
+  filter: blur(1.5rem);
+}
+
+.card-container:hover::after,
+.card-container:hover::before {
+  opacity: 1;
+  animation: 3s spin linear infinite;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
 .card-content {
   padding: 1em;
   display: flex;

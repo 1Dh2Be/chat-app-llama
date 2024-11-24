@@ -128,6 +128,7 @@ $darkgrey-color: #d4d4d4;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    // z-index: -2;
 }
 
 .header {
@@ -192,10 +193,18 @@ $darkgrey-color: #d4d4d4;
     gap: 50px;
 
     h2 {
-        font-size: 30px;
-        background-image: linear-gradient(to right, #4169E1, #6B54C7, #B85F9A 50%, #EE3144);
-        background-clip: text;
-        color: transparent;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 50px;
+        color: #777;
+
+        .greeting-text{
+            background-image: linear-gradient(to right, #4169E1, #6B54C7, #B85F9A 50%, #EE3144);
+            background-clip: text;
+            color: transparent;
+        }
     }
 }
 
@@ -203,6 +212,6 @@ $darkgrey-color: #d4d4d4;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
 }
 
