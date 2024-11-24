@@ -14,6 +14,8 @@ const TextArea = ({messages, setMessages, setIsActive}) => {
     const { inputText, setInputText, textareaRef, inputRef } = useTextArea();
     const { selectedModel } = useModel();
 
+    const model = selectedModel[Object.keys(selectedModel)]
+
     const handleLocalSendMessage = (e) => {
         handleSendMessage(
             e,
@@ -24,7 +26,7 @@ const TextArea = ({messages, setMessages, setIsActive}) => {
             textareaRef,
             inputRef,
             setIsActive,
-            selectedModel
+            model
         );
       };
 

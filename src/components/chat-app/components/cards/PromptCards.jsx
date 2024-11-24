@@ -6,6 +6,8 @@ const PromptCards = ({text, icon, messages, setMessages, setIsActive}) => {
 
     const { selectedModel } = useModel();
 
+    const model = selectedModel[Object.keys(selectedModel)]
+
     return (
         <div className="card-wrapper">
             <div className="card-container" onClick={() => handleCardClick(
@@ -13,7 +15,7 @@ const PromptCards = ({text, icon, messages, setMessages, setIsActive}) => {
                 messages,
                 setMessages,
                 setIsActive,
-                selectedModel
+                model
             )}>
                 <div className="card-content">
                     <span className="cards-icon">{icon}</span>

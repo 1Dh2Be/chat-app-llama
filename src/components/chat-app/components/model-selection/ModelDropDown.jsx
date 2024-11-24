@@ -1,8 +1,9 @@
 import "./ModelDropDown.css"
 import { useRef, useState, useEffect } from "react"
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import { useModel } from "./ModelContext";
+import { FaCheckCircle } from "react-icons/fa";
+
 
 
 
@@ -11,10 +12,10 @@ const ModelDropDown = () => {
     const {selectedModel, setSelectModel} = useModel();
     const dropdownRef  = useRef(null)
 
-    const models = [
-        'mistral-7b-instruct',
-        'mixtral-8x22b-instruct'
-    ]
+    const models = {
+      "Neptune": "mistral-7b-instruct",
+      "Neptune Pro": "mixtral-8x22b-instruct"
+    };
 
     useEffect(() => {
       const handleClickOutside = (e) => {
@@ -32,9 +33,13 @@ const ModelDropDown = () => {
       }
     }, [isOpen]);
 
-    const handleModelSelect = (model) => {
-      setSelectModel(model)
+    const handleModelSelect = (modelkey) => {
+      setSelectModel({[modelkey]: models[modelkey]})
       setIsOpen(!isOpen)
+    }
+
+    const getCurrentModelKey = () => {
+      return Object.keys(selectedModel)[0]
     }
 
     return (
@@ -43,17 +48,17 @@ const ModelDropDown = () => {
             className="left-section"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <h1>{selectedModel}</h1>
+            <h1>{getCurrentModelKey()}</h1>
             <RiArrowDropDownLine className="icon" size="25px"/>
           </div>
 
           {isOpen && (
             <div className="dropdown-menu">
-              {models.map((model, index) => (
-                <div key={index} className="dropdown-item" onClick={() => {handleModelSelect(model)}}>
-                  {model}
-                  {model === selectedModel && (
-                    <IoCheckmarkCircleOutline className="selected-icon" size="14px"/>
+              {Object.keys(models).map((modelKey) => (
+                <div key={modelKey} className="dropdown-item" onClick={() => {handleModelSelect(modelKey)}}>
+                  {modelKey}
+                  {getCurrentModelKey() === modelKey && (
+                    <FaCheckCircle className="selected-icon" size="14px" color="white"/>
                   )}
                 </div>
               ))}
