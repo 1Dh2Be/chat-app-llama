@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { RiFileCopyLine } from "react-icons/ri";
+import LlmIcon from '../chat-app/components/icons-component/llm-icon/LlmIcon';
 
 const ChatDiscussion = ({ messages }) => {
   const messagesEndRef = useRef(null);
@@ -16,27 +17,9 @@ const ChatDiscussion = ({ messages }) => {
     scrollToBottom();
   }, [messages]);
 
-  // Custom components for markdown rendering
+  // Simplified markdown components
   const markdownComponents = {
-    h1: ({ node, ...props }) => <h1 style={{ marginTop: '1.5em', marginBottom: '1em' }} {...props} />,
-    h2: ({ node, ...props }) => <h2 style={{ marginTop: '1.5em', marginBottom: '1em' }} {...props} />,
-    h3: ({ node, ...props }) => <h3 style={{ marginTop: '1.2em', marginBottom: '0.8em' }} {...props} />,
-    p: ({ node, ...props }) => <p style={{ marginBottom: '1em', lineHeight: '1.6' }} {...props} />,
-    ul: ({ node, ...props }) => <ul style={{ marginTop: '1em', marginBottom: '1em' }} {...props} />,
-    ol: ({ node, ...props }) => <ol style={{ marginTop: '1em', marginBottom: '1em' }} {...props} />,
-    li: ({ node, ...props }) => <li style={{ marginBottom: '0.5em' }} {...props} />,
-    blockquote: ({ node, ...props }) => (
-      <blockquote 
-        style={{ 
-          marginTop: '1em', 
-          marginBottom: '1em',
-          paddingLeft: '1em',
-          borderLeft: '3px solid #4a4a4a',
-          color: '#ececf1'
-        }} 
-        {...props} 
-      />
-    ),
+    // Only keep essential formatting
     code({ node, inline, className, children, ...props }) {
       const match = /language-(\w+)/.exec(className || '');
       return !inline && match ? (
@@ -76,19 +59,20 @@ const ChatDiscussion = ({ messages }) => {
             key={index}
             className={`message ${message.type === 'user' ? 'user-message' : 'bot-message'}`}
           >
-            <div className="message-content">
+            <div className="message-wrapper">
               {message.type === 'user' ? (
-                // For user messages, render plain text
-                <p>{message.text}</p>
+                ''
               ) : (
-                // For bot messages, render with markdown
-                <ReactMarkdown
-                  components={markdownComponents}
-                  className="markdown-content"
-                >
-                  {message.text}
-                </ReactMarkdown>
+                <LlmIcon />
               )}
+            </div>
+            <div className="message-content">
+              <ReactMarkdown
+                components={markdownComponents}
+                className="markdown-content"
+              >
+                {message.text}
+              </ReactMarkdown>
             </div>
           </div>
         ))}

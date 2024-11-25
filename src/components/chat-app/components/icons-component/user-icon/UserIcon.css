@@ -1,0 +1,27 @@
+.profile-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #6B54C7;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.profile-icon::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: currentColor;
+    opacity: 0;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.profile-icon:hover::before {
+    opacity: 0.13;
+    transform: scale(1.4);
+}

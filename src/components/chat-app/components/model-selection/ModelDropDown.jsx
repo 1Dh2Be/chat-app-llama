@@ -57,7 +57,7 @@ const ModelDropDown = () => {
               {Object.keys(models).map((modelKey) => (
                 <div key={modelKey} className="dropdown-item" onClick={() => {handleModelSelect(modelKey)}}>
                   {modelKey}
-                  {getCurrentModelKey() === modelKey && (
+                  {modelKey === getCurrentModelKey()[0] && (
                     <FaCheckCircle className="selected-icon" size="14px" color="white"/>
                   )}
                 </div>

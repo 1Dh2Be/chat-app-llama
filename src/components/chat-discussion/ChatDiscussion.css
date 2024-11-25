@@ -3,7 +3,7 @@
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
-  height: calc(100vh - 160px);
+  height: calc(100vh - 165px);
   /* Customize the scroll bar */
   /* Add indicators to the top and bottom of the scroll bar */
 }
@@ -96,8 +96,14 @@
 }
 
 .bot-message {
+  position: relative;
   display: flex;
   justify-content: flex-start;
+}
+.bot-message .message-wrapper {
+  position: absolute;
+  top: 8px;
+  left: -50px;
 }
 .bot-message .message-content {
   padding: 12px 16px;
@@ -167,8 +173,10 @@
 .user-message {
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 }
 .user-message .message-content {
+  max-width: 70%;
   width: -moz-fit-content;
   width: fit-content;
   background-color: rgba(60, 64, 66, 0.5);
