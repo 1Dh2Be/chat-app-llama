@@ -36,10 +36,6 @@ $darkgrey-color: #d4d4d4;
         box-sizing: border-box;
         padding-left: 1.2rem;
         width: 250px;
-
-        .icon-text {
-            display: block;
-        }
     }
 
     .spacer {
@@ -59,9 +55,10 @@ $darkgrey-color: #d4d4d4;
         &::before {
             content: '';
             position: absolute;
-            width: 21px;
-            height: 21px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
+            left: -1.5px;
             background-color: currentColor;
             opacity: 0;
             transform: scale(1);
@@ -79,26 +76,27 @@ $darkgrey-color: #d4d4d4;
         justify-content: flex-start;
         align-items: center;
         gap: 10px;
+        left: -3px;
         height: 35px;
-        padding: 0.1em 0.1em 0.1em 0.1em;
+        padding: 0.1em;
         border-radius: 20px;
         background-color: #3b3b3b;
-        margin-top: 40px;
+        margin-top: 55px;
         width: 35px;
         transition: width 0.3s ease, padding-left 0.3s ease;
         overflow: hidden;
 
-        .GoPlus { // Add styles for the icon
-            position: absolute; // Add this
-            left: 2px; // Adjust this value as needed
-            min-width: 31px; // Add this
+        .GoPlus {
+            position: absolute;
+            left: 4px;
+            min-width: 31px;
         }
 
         .icon-text {
             opacity: 0;
             white-space: nowrap;
             transition: opacity 0.3s ease;
-            margin-left: 35px;
+            margin-left: 45px;
         }
     }
 
@@ -106,7 +104,7 @@ $darkgrey-color: #d4d4d4;
         width: 250px;
 
         #add-button-icon {
-            width: 150px;
+            width: 130px;
 
             .icon-text {
                 opacity: 1;

@@ -43,7 +43,7 @@ const ChatApp = () => {
         <div className="spacer"></div>
         <div id="settings-button-icon" className="icon">
           <IoIosSettings size="22px"/>
-          <span className="icon-text">Settings</span>
+          {isSideBar && <span className="icon-text">Settings</span>}
         </div>
       </div>
 
