@@ -21,25 +21,15 @@
   padding-left: 1.2rem;
   transition: width 0.3s ease;
 }
-.sidebar .icon-text {
-  display: none;
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
-  white-space: nowrap;
-}
 .sidebar.active {
   display: flex;
   align-items: flex-start;
   box-sizing: border-box;
   padding-left: 1.2rem;
-  width: 200px;
+  width: 250px;
 }
 .sidebar.active .icon-text {
   display: block;
-}
-.sidebar.active #add-button-icon {
-  padding-right: 0.5em;
 }
 .sidebar .spacer {
   flex-grow: 1;
@@ -68,16 +58,39 @@
   transform: scale(1.6);
 }
 .sidebar #add-button-icon {
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 0.1em;
+  height: 35px;
+  padding: 0.1em 0.1em 0.1em 0.1em;
   border-radius: 20px;
   background-color: #3b3b3b;
   margin-top: 40px;
+  width: 35px;
+  transition: width 0.3s ease, padding-left 0.3s ease;
+  overflow: hidden;
+}
+.sidebar #add-button-icon .GoPlus {
+  position: absolute;
+  left: 2px;
+  min-width: 31px;
+}
+.sidebar #add-button-icon .icon-text {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  margin-left: 35px;
+}
+.sidebar.active {
+  width: 250px;
+}
+.sidebar.active #add-button-icon {
+  width: 150px;
+}
+.sidebar.active #add-button-icon .icon-text {
+  opacity: 1;
 }
 .sidebar #settings-button-icon {
   display: flex;

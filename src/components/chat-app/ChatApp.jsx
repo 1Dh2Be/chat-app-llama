@@ -36,9 +36,9 @@ const ChatApp = () => {
         <div id="menu-icon" className="icon" onClick={() => setIsSideBar(!isSideBar)}>
           <GiHamburgerMenu size="16px"/>
         </div>
-        <div id="add-button-icon" className="icon" onClick={newMessage}>
-          <GoPlus size="31px"/>
-          <span className="icon-text">New chat</span>
+        <div  id="add-button-icon" className={`icon ${isSideBar ? 'active' : ''}`} onClick={newMessage}>
+          <GoPlus className="GoPlus" size="31px"/>
+          {isSideBar && <span className="icon-text">New chat</span>}
         </div>
         <div className="spacer"></div>
         <div id="settings-button-icon" className="icon">
