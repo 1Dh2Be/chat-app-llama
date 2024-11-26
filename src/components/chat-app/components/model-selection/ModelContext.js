@@ -4,7 +4,7 @@ const ModelContext = createContext();
 
 export const ModelProvider = ({ children }) => {
 
-    const [selectedModel, setSelectModel] = useState({'Neptune':'mistral-7b-instruct'});
+    const [selectedModel, setSelectModel] = useState({'Nexus':'mistral-7b-instruct'});
 
     return (
         <ModelContext.Provider value={{selectedModel, setSelectModel}} >

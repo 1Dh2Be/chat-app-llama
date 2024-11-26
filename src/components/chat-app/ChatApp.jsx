@@ -8,12 +8,9 @@ import ModelDropDown from "./components/model-selection/ModelDropDown.jsx";
 import { handleNewChat } from './utils/handlers.js';
 import { cardsData } from "./components/cards/cards-data.js";
 import TextArea from "./components/text-area/TextArea.jsx";
-
-//Icons import
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoIosSettings } from "react-icons/io";
-import { GoPlus } from "react-icons/go";
 import PromptCards from "./components/cards/PromptCards.jsx";
+import SideBar from "./components/side-bar/SideBar.jsx";
+import UserIcon from "./components/icons-component/user-icon/UserIcon.jsx"
 
 const ChatApp = () => {
 
@@ -32,20 +29,11 @@ const ChatApp = () => {
   return (
     <div className="app">
       {/* Sidebar */}
-      <div className={`sidebar ${isSideBar? 'active' : ''}`}>
-        <div id="menu-icon" className="icon" onClick={() => setIsSideBar(!isSideBar)}>
-          <GiHamburgerMenu size="16px"/>
-        </div>
-        <div  id="add-button-icon" className={`icon ${isSideBar ? 'active' : ''}`} onClick={newMessage}>
-          <GoPlus className="GoPlus" size="31px"/>
-          {isSideBar && <span className="icon-text">New chat</span>}
-        </div>
-        <div className="spacer"></div>
-        <div id="settings-button-icon" className="icon">
-          <IoIosSettings size="22px"/>
-          {isSideBar && <span className="icon-text">Settings</span>}
-        </div>
-      </div>
+      <SideBar
+        isSideBar={isSideBar}
+        setIsSideBar={setIsSideBar}
+        handleNewMessage={newMessage}
+      />
 
       {/* Main Content */}
       <div className="main-content">
@@ -53,7 +41,7 @@ const ChatApp = () => {
         <header className="header">
           <ModelDropDown />
           <section className="right-section">
-            <div className="profile-icon">MI</div>
+            <UserIcon />
           </section>
         </header>
 

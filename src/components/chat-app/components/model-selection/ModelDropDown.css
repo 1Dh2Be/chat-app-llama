@@ -40,9 +40,13 @@
   border-radius: 10px;
 }
 .left-section h1 {
+  font-size: 23px;
+  color: white;
+  font-weight: 400;
   margin: 5px 7px;
 }
 .left-section .icon {
+  color: white;
   margin: 6px 5px 0 0;
   cursor: pointer;
 }/*# sourceMappingURL=ModelDropDown.css.map */

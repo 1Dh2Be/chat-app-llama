@@ -13,8 +13,8 @@ const ModelDropDown = () => {
     const dropdownRef  = useRef(null)
 
     const models = {
-      "Neptune": "mistral-7b-instruct",
-      "Neptune Pro": "mixtral-8x22b-instruct"
+      "Nexus": "mistral-7b-instruct",
+      "Nexus Pro": "mixtral-8x22b-instruct"
     };
 
     useEffect(() => {

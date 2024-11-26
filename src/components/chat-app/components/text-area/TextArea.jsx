@@ -74,7 +74,7 @@ const TextArea = ({messages, setMessages, setIsActive}) => {
               <FaCircleArrowRight size="31px"/>
             </button>
           </div>
-          <div><p className="caution-message">Neptune may make mistakes. Please double-check its responses.</p></div>
+          <div><p className="caution-message">Nexus may make mistakes. Please double-check its responses.</p></div>
         </div>
       </form>
     )
