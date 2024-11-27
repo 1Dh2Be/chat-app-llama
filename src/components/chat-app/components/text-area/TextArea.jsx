@@ -4,7 +4,6 @@ import { useModel } from '../model-selection/ModelContext.js';
 import { useTextArea } from './TextAreaContext.js'
 
 //Icons import
-import { RiImageAddLine } from "react-icons/ri";
 import { FaCircleArrowRight } from "react-icons/fa6";
 
 

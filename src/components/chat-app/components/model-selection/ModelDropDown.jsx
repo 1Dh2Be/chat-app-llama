@@ -13,8 +13,8 @@ const ModelDropDown = () => {
     const dropdownRef  = useRef(null)
 
     const models = {
-      "Nexus": "mistral-7b-instruct",
-      "Nexus Pro": "mixtral-8x22b-instruct"
+      "Nexus": "llama3.2-11b-vision",
+      "Nexus Pro": "llama3.1-405b"
     };
 
     useEffect(() => {

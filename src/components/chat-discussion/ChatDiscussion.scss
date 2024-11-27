@@ -199,9 +199,29 @@
   .message-content {
     max-width: 70%;
     width: fit-content;
+    overflow-x: auto;
     background-color: rgba($color: #3C4042, $alpha: 0.5);
     border-radius: 25px;
     color: #ececf1;
     padding: 12px 16px;
+
+      &::-webkit-scrollbar {
+        height: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+          background: transparent;  // background of the track
+          margin: 15px;  // adds some space from top and bottom
+      }
+
+      &::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.3);  // color of the scroll thumb
+          border-radius: 10px;  // rounded corners
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+          background: rgba(255, 255, 255, 0.5);  // color when hovering
+          cursor: default;
+      }
   }
 }

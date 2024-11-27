@@ -26,6 +26,7 @@
   position: relative;
   left: 5px;
   color: #d4d4d4;
+  cursor: pointer;
 }
 #menu-icon::before {
   content: "";

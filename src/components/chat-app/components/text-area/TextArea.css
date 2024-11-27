@@ -76,9 +76,13 @@ form {
   background: none;
   border: none;
   color: white;
+  opacity: 1;
   cursor: pointer;
   transform: rotate(-90deg);
 }
 .input-container .input-wrapper #send-button:disabled {
   cursor: default;
+}
+.input-container .input-wrapper #send-button:hover {
+  opacity: 0.5 !important;
 }/*# sourceMappingURL=TextArea.css.map */

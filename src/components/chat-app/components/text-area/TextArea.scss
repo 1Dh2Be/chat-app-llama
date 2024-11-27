@@ -79,11 +79,16 @@ form {
             background: none;
             border: none;
             color: white;
+            opacity: 1;
             cursor: pointer;
             transform: rotate(-90deg);
 
             &:disabled {
                 cursor: default;
+            }
+
+            &:hover {
+                opacity: 0.5 !important;
             }
         }
     }
