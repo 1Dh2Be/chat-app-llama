@@ -4,6 +4,7 @@
   box-sizing: border-box;
   overflow-y: auto;
   height: calc(100vh - 165px);
+  padding-bottom: 20px;
   /* Customize the scroll bar */
   /* Add indicators to the top and bottom of the scroll bar */
 }
