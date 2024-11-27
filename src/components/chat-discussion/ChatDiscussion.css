@@ -102,7 +102,6 @@
 }
 .bot-message .message-wrapper {
   position: absolute;
-  top: 8px;
   left: -50px;
 }
 .bot-message .message-content {
@@ -180,10 +179,10 @@
   width: -moz-fit-content;
   width: fit-content;
   overflow-x: auto;
-  background-color: rgba(60, 64, 66, 0.5);
+  background-color: #303030;
   border-radius: 25px;
   color: #ececf1;
-  padding: 12px 16px;
+  padding: 12px 20px;
 }
 .user-message .message-content::-webkit-scrollbar {
   height: 10px;

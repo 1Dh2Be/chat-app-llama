@@ -1,10 +1,10 @@
 import './LlmIcon.css'
-import tridentIcon from './trident.png';
+import Nexus from './Nexus2.png';
 
 const LlmIcon = () => {
     return (
         <div className='llm-icon'>
-            <img src={tridentIcon} alt="Brand Icon" />
+            <img src={Nexus} alt="Brand Icon" />
         </div>
     )
 }

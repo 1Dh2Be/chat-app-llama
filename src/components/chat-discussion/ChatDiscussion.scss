@@ -114,7 +114,6 @@
 
   .message-wrapper {
     position: absolute;
-    top: 8px;
     left: -50px;
   }
 
@@ -200,10 +199,10 @@
     max-width: 70%;
     width: fit-content;
     overflow-x: auto;
-    background-color: rgba($color: #3C4042, $alpha: 0.5);
+    background-color: #303030;
     border-radius: 25px;
     color: #ececf1;
-    padding: 12px 16px;
+    padding: 12px 20px;
 
       &::-webkit-scrollbar {
         height: 10px;
