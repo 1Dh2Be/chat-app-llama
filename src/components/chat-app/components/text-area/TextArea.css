@@ -10,6 +10,8 @@ form {
   height: fit-content;
   width: 100%;
   margin-bottom: 0.8rem;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .input-container {
@@ -17,6 +19,8 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 750px;
 }
 .input-container .caution-message {
   padding-top: 5px;
@@ -27,7 +31,7 @@ form {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 80vw;
+  width: 100%;
   position: relative;
 }
 .input-container .input-wrapper textarea {
