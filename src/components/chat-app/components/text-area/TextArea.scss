@@ -1,7 +1,3 @@
-$caution-message-color: #9e9e9e;
-$text-area-color: #2F2F2F;
-
-
 form {
     position: absolute;
     bottom: 0;
@@ -27,7 +23,7 @@ form {
 
     .caution-message{
         padding-top: 5px;
-        color: $caution-message-color;
+        color: var(--text-secondary);
         font-size: 12px;
     }
 
@@ -48,17 +44,17 @@ form {
             max-height: 230px;
             border-radius: 30px;
             border: none;
-            background-color: $text-area-color;
+            background-color: var(--surface-color);
             padding: 13px 55px;
             resize: none;
             outline: none;
-            color: white;
+            color: var(--text-primary);
             font-size: 16px;
             line-height: 2;
             padding-left: 30px;
 
             &::placeholder {
-                color: rgba(255, 255, 255, 0.5);
+                color: var(--text-primary);
                 text-align:left;
             }
 
@@ -90,7 +86,7 @@ form {
             right: 40px;
             background: none;
             border: none;
-            color: white;
+            color: var(--text-primary);
             opacity: 1;
             cursor: pointer;
             transform: rotate(-90deg);

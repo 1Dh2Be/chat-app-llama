@@ -1,15 +1,18 @@
 import './App.css';
 import ChatApp from './components/chat-app/ChatApp.jsx';
-import { ModelProvider } from './components/chat-app/components/model-selection/ModelContext.js';
-import { TextAreaProvider } from './components/chat-app/components/text-area/TextAreaContext.js';
+import { ModelProvider } from './components/chat-app/context/ModelContext.js';
+import { TextAreaProvider } from './components/chat-app/context/TextAreaContext.js';
+import { ThemeProvider } from './components/chat-app/context/ThemeContext.js';
 
 function App() {
   return (
-    <ModelProvider>
-      <TextAreaProvider>
-        <ChatApp />
-      </TextAreaProvider>
-    </ModelProvider>
+    <ThemeProvider>
+      <ModelProvider>
+        <TextAreaProvider>
+          <ChatApp />
+        </TextAreaProvider>
+      </ModelProvider>
+    </ThemeProvider>
   );
 }
 

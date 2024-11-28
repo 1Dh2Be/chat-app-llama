@@ -4,7 +4,7 @@
   align-items: flex-start;
   justify-content: space-between;
   box-sizing: border-box;
-  background-color: #1E1E1E;
+  background-color: var(--background-secondary);
   padding: 20px 0;
   width: 70px;
   padding-left: 1.2rem;
@@ -25,7 +25,7 @@
   margin-top: 8px;
   position: relative;
   left: 5px;
-  color: #d4d4d4;
+  color: var(--text-primary);
   cursor: pointer;
 }
 #menu-icon::before {
@@ -55,18 +55,21 @@
   height: 35px;
   padding: 0.1em;
   border-radius: 20px;
-  background-color: #3b3b3b;
+  background-color: var(--border-color);
   margin-top: 55px;
   width: 35px;
   transition: width 0.3s ease, padding-left 0.3s ease;
   overflow: hidden;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .add-button-icon .GoPlus {
   position: absolute;
   left: 4px;
   min-width: 31px;
-  color: white;
+  color: var(--text-primary);
 }
 .add-button-icon .icon-text {
   opacity: 0;
@@ -74,7 +77,7 @@
   transition: opacity 0.3s ease;
   margin-left: 45px;
   font-weight: 500;
-  color: white;
+  color: var(--text-primary);
 }
 .add-button-icon.active {
   width: 130px;
@@ -92,6 +95,9 @@
   height: -moz-fit-content;
   height: fit-content;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .help-button-icon, .settings-button-icon {
@@ -99,7 +105,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: white;
+  color: var(--text-primary);
   gap: 10px;
   height: 35px;
   width: 35px;
@@ -111,8 +117,9 @@
   opacity: 0;
   white-space: nowrap;
   transition: opacity 0.3s ease;
-  color: white;
+  color: var(--text-primary);
   margin-left: 10px;
+  z-index: 1;
 }
 .help-button-icon .IoHelpCircleOutline, .help-button-icon .IoIosSettings, .settings-button-icon .IoHelpCircleOutline, .settings-button-icon .IoIosSettings {
   position: relative;
@@ -136,9 +143,63 @@
   height: 35px;
   border-radius: 50%;
   opacity: 0;
-  background-color: rgba(212, 212, 212, 0.15);
+  background-color: var(--border-color);
   transition: all 0.3s ease;
 }
 .help-button-icon:hover::before, .settings-button-icon:hover::before {
   opacity: 1;
+}
+
+.settings-options {
+  position: absolute;
+  bottom: 30px;
+  left: 65px;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 10;
+  animation: slideIn 0.2s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: var(--text);
+}
+.settings-row:hover {
+  background-color: var(--border-color);
+}
+
+.row-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-primary);
+}
+.row-left .icon {
+  font-size: 18px;
+}
+
+.current-theme {
+  font-size: 14px;
+  color: var(--text-primary);
 }/*# sourceMappingURL=SideBar.css.map */

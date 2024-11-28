@@ -1,14 +1,10 @@
-$navbar-color: #1E1E1E;
-$darkgrey-color: #d4d4d4;
-
-
 .sidebar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     box-sizing: border-box;
-    background-color: $navbar-color;
+    background-color: var(--background-secondary);
     padding: 20px 0;
     width: 70px;
     padding-left: 1.2rem;
@@ -31,7 +27,7 @@ $darkgrey-color: #d4d4d4;
     margin-top: 8px;
     position: relative;
     left: 5px;
-    color: $darkgrey-color;
+    color: var(--text-primary);
     cursor: pointer;
 
     &::before {
@@ -63,18 +59,19 @@ $darkgrey-color: #d4d4d4;
     height: 35px;
     padding: 0.1em;
     border-radius: 20px;
-    background-color: #3b3b3b;
+    background-color: var(--border-color);
     margin-top: 55px;
     width: 35px;
     transition: width 0.3s ease, padding-left 0.3s ease;
     overflow: hidden;
     cursor: pointer;
+    user-select: none;
 
     .GoPlus {
         position: absolute;
         left: 4px;
         min-width: 31px;
-        color: white;
+        color: var(--text-primary);
     }
 
     .icon-text {
@@ -83,7 +80,7 @@ $darkgrey-color: #d4d4d4;
         transition: opacity 0.3s ease;
         margin-left: 45px;
         font-weight: 500;
-        color: white;
+        color: var(--text-primary);
     }
 
     &.active {
@@ -100,10 +97,10 @@ $darkgrey-color: #d4d4d4;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    // gap: 5px;
     width: 100%;
     height: fit-content;
     cursor: pointer;
+    user-select: none;
 }
 
 .help-button-icon, .settings-button-icon {
@@ -111,21 +108,21 @@ $darkgrey-color: #d4d4d4;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: white;
+    color: var(--text-primary);
     gap: 10px;
     height: 35px;
     width: 35px;
     padding: 0.1em;
     border-radius: 20px;
     transition: width 0.3s ease;
-    // overflow: hidden;
 
     .icon-text {
         opacity: 0;
         white-space: nowrap;
         transition: opacity 0.3s ease;
-        color: white;
+        color: var(--text-primary);
         margin-left: 10px;
+        z-index: 1;
     }
 
     // Fix icon position
@@ -155,11 +152,68 @@ $darkgrey-color: #d4d4d4;
         height: 35px;
         border-radius: 50%;
         opacity: 0;
-        background-color: rgba($color: $darkgrey-color, $alpha: 0.15);
+        background-color: var(--border-color);
         transition: all 0.3s ease;
     }
 
     &:hover::before {
         opacity: 1;
     }
+}
+
+// Settings styles
+
+.settings-options {
+    position: absolute;
+    bottom: 30px;
+    left: 65px;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 10;
+    animation: slideIn 0.2s ease-in-out;
+    user-select: none;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: var(--text);
+
+    &:hover {
+        background-color: var(--border-color);
+    }
+}
+
+.row-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-primary);
+
+    .icon {
+        font-size: 18px;
+    }
+}
+
+.current-theme {
+    font-size: 14px;
+    color: var(--text-primary);
 }

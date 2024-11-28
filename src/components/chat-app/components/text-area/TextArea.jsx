@@ -1,7 +1,7 @@
 import "./TextArea.css"
 import { handleSendMessage, isTextEmpty } from '../../utils/handlers.js';
-import { useModel } from '../model-selection/ModelContext.js';
-import { useTextArea } from './TextAreaContext.js'
+import { useModel } from '../../context/ModelContext.js';
+import { useTextArea } from '../../context/TextAreaContext.js'
 
 //Icons import
 import { FaCircleArrowRight } from "react-icons/fa6";

@@ -11,7 +11,7 @@ $main-section-color: #212121;
 //Main Content
 
 .main-content {
-    background-color: $main-section-color;
+    background-color: var(--background-primary);
     min-height: 100vh;
     display: flex;
     flex-direction: column;

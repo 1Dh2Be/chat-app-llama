@@ -1,5 +1,5 @@
 import "./PromptCards.css"
-import { useModel } from '../model-selection/ModelContext.js';
+import { useModel } from '../../context/ModelContext.js';
 import { handleCardClick } from "../../utils/handlers.js";
 
 const PromptCards = ({text, icon, messages, setMessages, setIsActive}) => {

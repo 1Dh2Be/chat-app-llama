@@ -24,7 +24,7 @@ form {
 }
 .input-container .caution-message {
   padding-top: 5px;
-  color: #9e9e9e;
+  color: var(--text-secondary);
   font-size: 12px;
 }
 .input-container .input-wrapper {
@@ -44,21 +44,21 @@ form {
   max-height: 230px;
   border-radius: 30px;
   border: none;
-  background-color: #2F2F2F;
+  background-color: var(--surface-color);
   padding: 13px 55px;
   resize: none;
   outline: none;
-  color: white;
+  color: var(--text-primary);
   font-size: 16px;
   line-height: 2;
   padding-left: 30px;
 }
 .input-container .input-wrapper textarea::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-primary);
   text-align: left;
 }
 .input-container .input-wrapper textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-primary);
   text-align: left;
 }
 .input-container .input-wrapper textarea::-webkit-scrollbar {
@@ -83,7 +83,7 @@ form {
   right: 40px;
   background: none;
   border: none;
-  color: white;
+  color: var(--text-primary);
   opacity: 1;
   cursor: pointer;
   transform: rotate(-90deg);

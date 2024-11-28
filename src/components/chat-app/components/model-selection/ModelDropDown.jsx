@@ -1,7 +1,7 @@
 import "./ModelDropDown.css"
 import { useRef, useState, useEffect } from "react"
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { useModel } from "./ModelContext";
+import { useModel } from "../../context/ModelContext";
 import { FaCheckCircle } from "react-icons/fa";
 
 
@@ -13,7 +13,7 @@ const ModelDropDown = () => {
     const dropdownRef  = useRef(null)
 
     const models = {
-      "Nexus": "llama3.2-11b-vision",
+      "Nexus": "Qwen2-72B-Instruct",
       "Nexus Pro": "llama3.1-405b"
     };
 
@@ -58,7 +58,7 @@ const ModelDropDown = () => {
                 <div key={modelKey} className="dropdown-item" onClick={() => {handleModelSelect(modelKey)}}>
                   {modelKey}
                   {modelKey === getCurrentModelKey()[0] && (
-                    <FaCheckCircle className="selected-icon" size="14px" color="white"/>
+                    <FaCheckCircle className="selected-icon" size="14px"/>
                   )}
                 </div>
               ))}

@@ -5,7 +5,7 @@
 }
 
 .main-content {
-  background-color: #212121;
+  background-color: var(--background-primary);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
