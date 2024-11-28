@@ -56,10 +56,12 @@ form {
 .input-container .input-wrapper textarea::-moz-placeholder {
   color: var(--text-primary);
   text-align: left;
+  opacity: 0.5;
 }
 .input-container .input-wrapper textarea::placeholder {
   color: var(--text-primary);
   text-align: left;
+  opacity: 0.5;
 }
 .input-container .input-wrapper textarea::-webkit-scrollbar {
   width: 8px;

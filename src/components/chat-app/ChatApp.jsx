@@ -11,6 +11,7 @@ import TextArea from "./components/text-area/TextArea.jsx";
 import PromptCards from "./components/cards/PromptCards.jsx";
 import SideBar from "./components/side-bar/SideBar.jsx";
 import UserIcon from "./components/icons-component/user-icon/UserIcon.jsx"
+import { useTranslation } from "react-i18next";
 
 const ChatApp = () => {
 
@@ -18,6 +19,7 @@ const ChatApp = () => {
   const [messages, setMessages] = useState([]);
   const [isNewChat, setIsNewChat] = useState(false);
   const [isSideBar, setIsSideBar] = useState(false);
+  const { t } = useTranslation();
 
   const [isActive, setIsActive] = useState(false);
 
@@ -50,21 +52,21 @@ const ChatApp = () => {
           {(!isActive || isNewChat) && (
             <div className="greeting">
               <h2>
-                <span className="greeting-text">Hello, Mimoun<br/></span>
-                <span>What's the subject for today?</span>
+                <span className="greeting-text">{t("greeting")}, Mimoun<br/></span>
+                <span>{t("topic")}</span>
               </h2>
-              <div className="cards">
-                {cardsData.map((data, index) => (
-                  <PromptCards
-                    key={index}
-                    text={data.text}
-                    icon={data.icon}
-                    messages={messages}
-                    setMessages={setMessages}
-                    setIsActive={setIsActive}
-                  />
-                ))}
-            </div>
+                <div className="cards">
+                  {cardsData.map((data, index) => (
+                    <PromptCards
+                      key={index}
+                      text={t(data.text)}
+                      icon={data.icon}
+                      messages={messages}
+                      setMessages={setMessages}
+                      setIsActive={setIsActive}
+                    />
+                  ))}
+              </div>
             </div>
           )}
 

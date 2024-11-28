@@ -7,21 +7,27 @@ p {
   font-size: 16px;
 }
 
+:root {
+  --font-size-small: 14px;
+  --font-size-regular: 16px;
+  --font-size-large: 18px;
+}
+
 :root[data-theme="dark"] {
   /* Light theme variables */
   --background-primary: hsl(0, 0%, 5%);
   --background-secondary: hsl(0, 0%, 11%);
   --text-primary: hsl(0, 0%, 100%);
-  --text-secondary: hsl(0, 0%, 70%);       /* Grey text */
-  --surface-color: hsl(0, 0%, 15%);        /* Card/button background */
-  --border-color: hsl(0, 0%, 25%);         /* Subtle borders */
+  --text-secondary: hsl(0, 0%, 70%);
+  --surface-color: hsl(0, 0%, 15%);
+  --border-color: hsl(0, 0%, 25%);
 }
 
 :root[data-theme="light"] {
-  --background-primary: hsl(0, 0%, 95%);    /* 100 - 15 = 85 */
-  --background-secondary: hsl(0, 0%, 85%);  /* 100 - 12 = 88 */
-  --text-primary: hsl(0, 0%, 0%);          /* 100 - 100 = 0 */
-  --text-secondary: hsl(0, 0%, 30%);       /* 100 - 70 = 30 */
-  --surface-color: hsl(0, 0%, 85%);        /* 100 - 20 = 80 */
-  --border-color: hsl(0, 0%, 75%);         /* 100 - 25 = 75 */
+  --background-primary: hsl(0, 0%, 95%);
+  --background-secondary: hsl(0, 0%, 85%);
+  --text-primary: hsl(0, 0%, 0%);
+  --text-secondary: hsl(0, 0%, 30%);
+  --surface-color: hsl(0, 0%, 85%);
+  --border-color: hsl(0, 0%, 75%);
 }

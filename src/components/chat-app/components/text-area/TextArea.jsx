@@ -5,12 +5,14 @@ import { useTextArea } from '../../context/TextAreaContext.js'
 
 //Icons import
 import { FaCircleArrowRight } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 
 const TextArea = ({messages, setMessages, setIsActive}) => {
 
     const { inputText, setInputText, textareaRef, inputRef } = useTextArea();
     const { selectedModel } = useModel();
+    const { t } = useTranslation();
 
     const model = selectedModel[Object.keys(selectedModel)]
 
@@ -37,7 +39,7 @@ const TextArea = ({messages, setMessages, setIsActive}) => {
           <div className="input-wrapper">
             <textarea
               ref={textareaRef}
-              placeholder={`Ask ${modelName}`}
+              placeholder={`${t("ask")} ${modelName}`}
               value={inputText}
               onChange={(e) => {
                 setInputText(e.target.value);
@@ -73,7 +75,7 @@ const TextArea = ({messages, setMessages, setIsActive}) => {
               <FaCircleArrowRight size="31px"/>
             </button>
           </div>
-          <div><p className="caution-message">Nexus may make mistakes. Please double-check its responses.</p></div>
+          <div><p className="caution-message">{t("warning")}</p></div>
         </div>
       </form>
     )

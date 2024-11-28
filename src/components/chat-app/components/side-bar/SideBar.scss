@@ -80,12 +80,11 @@
         transition: opacity 0.3s ease;
         margin-left: 45px;
         font-weight: 500;
+        font-size: var(--font-size-small);
         color: var(--text-primary);
     }
 
     &.active {
-        width: 130px;
-
         .icon-text {
             opacity: 1;
         }
@@ -109,7 +108,7 @@
     justify-content: flex-start;
     align-items: center;
     color: var(--text-primary);
-    gap: 10px;
+    gap: 5px;
     height: 35px;
     width: 35px;
     padding: 0.1em;
@@ -123,6 +122,8 @@
         color: var(--text-primary);
         margin-left: 10px;
         z-index: 1;
+        font-size: var(--font-size-small);
+        font-weight: 500;
     }
 
     // Fix icon position
@@ -175,6 +176,11 @@
     z-index: 10;
     animation: slideIn 0.2s ease-in-out;
     user-select: none;
+
+    &.active {
+        bottom: 30px;
+        left: 120px;
+    }
 }
 
 @keyframes slideIn {
@@ -215,5 +221,14 @@
 
 .current-theme {
     font-size: 14px;
+    color: var(--text-primary);
+}
+
+.language-select {
+    position: relative;
+    left: 3px;
+    border: none;
+    outline: none;
+    background-color: transparent;
     color: var(--text-primary);
 }

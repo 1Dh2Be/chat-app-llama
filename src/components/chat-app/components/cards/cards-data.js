@@ -5,15 +5,15 @@ import { LuSparkles } from "react-icons/lu";
 
 export const cardsData = [
     {
-        text: "Give me a step-by-step guide on creating a monthly budget and tracking expenses",
+        text: "cards.budget",
         icon: <TbPigMoney />
     },
     {
-        text: "Help me develop a morning routine that will boost productivity and energy levels",
+        text: "cards.routine",
         icon: <SlEnergy />
     },
     {
-        text: "Show me effective techniques for managing stress and anxiety in the workplace",
+        text: "cards.stress",
         icon: <LuSparkles />
     }
 ]
