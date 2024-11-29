@@ -7,6 +7,7 @@
     background-color: #6B54C7;
     border-radius: 30px;
     cursor: pointer;
+    user-select: none;
 }
 
 .profile-icon::before {

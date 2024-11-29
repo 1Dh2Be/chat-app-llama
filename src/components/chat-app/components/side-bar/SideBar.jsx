@@ -74,7 +74,7 @@ const SideBar = ({ isSideBar, setIsSideBar, handleNewMessage }) => {
             <span>{t("theme")}</span>
           </div>
           <div className="current-theme">
-            {isLightTheme ? 'Light' : 'Dark'}
+          {isLightTheme ? t("light_theme") : t("dark_theme")}
           </div>
         </div>
       </div>

@@ -14,6 +14,8 @@ i18n
                     "settings": "Settings",
                     "theme": "Theme",
                     "language": "Language",
+                    "dark_theme": "Dark",
+                    "light_theme": "Light",
                     "greeting": "Hello",
                     "topic": "What's the subject for today?",
                     "cards": {
@@ -33,6 +35,8 @@ i18n
                     "settings": "Paramètres",
                     "theme": "Thème",
                     "language": "Langue",
+                    "dark_theme": "Sombre",
+                    "light_theme": "Lumière",
                     "greeting": "Bonjour",
                     "topic": "Quel est le sujet d'aujourd'hui?",
                     "cards": {
@@ -52,6 +56,8 @@ i18n
                     "settings": "Instellingen",
                     "theme": "Thema",
                     "language": "Taal",
+                    "dark_theme": "Donker",
+                    "light_theme": "Licht",
                     "greeting": "Hallo",
                     "topic": "Wat is de onderwerp \n voor vandaag?",
                     "cards": {

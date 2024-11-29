@@ -5,6 +5,7 @@
     width: 55px;
     height: 55px;
     overflow: hidden;
+    user-select: none;
 }
 
 .llm-icon img {
