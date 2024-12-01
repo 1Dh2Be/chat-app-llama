@@ -21,6 +21,7 @@ p {
   --text-secondary: hsl(0, 0%, 70%);
   --surface-color: hsl(0, 0%, 15%);
   --border-color: hsl(0, 0%, 25%);
+  --acent-color: hsl(0, 0%, 40%);
 }
 
 :root[data-theme="light"] {
@@ -30,4 +31,5 @@ p {
   --text-secondary: hsl(0, 0%, 30%);
   --surface-color: hsl(0, 0%, 85%);
   --border-color: hsl(0, 0%, 75%);
+  --acent-color: hsl(0, 0%, 75%);
 }

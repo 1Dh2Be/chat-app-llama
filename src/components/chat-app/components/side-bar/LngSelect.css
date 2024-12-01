@@ -1,0 +1,42 @@
+.lng-container {
+    width: 35px;
+    height: fit-content;
+    background-color: transparent;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    position: relative; /* Add this to make absolute positioning work relative to this container */
+}
+
+.current-lng {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lng-menu {
+    position: absolute;
+    top: 100%; /* Position right below the current-lng */
+    left: -30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 250%; /* Use 100% instead of fixed width to match container */
+    background-color: var(--acent-color);
+    border-radius: 10px;
+    padding: 0.1em;
+    z-index: 1000; /* Ensure menu appears above other elements */
+}
+
+.lng-menu > span {
+    cursor: pointer;
+    padding: 0.3em 0.5em; /* Add padding for better clickable area */
+    border-radius: 8px; /* Slightly rounded corners for hover effect */
+    transition: background-color 0.2s ease; /* Smooth transition for hover */
+    text-align: center; /* Center the text */
+}
+
+.lng-menu > span:hover {
+    background-color: var(--border-color);
+}

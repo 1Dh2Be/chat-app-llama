@@ -6,10 +6,40 @@ import { GoPlus } from "react-icons/go";
 import { IoHelpCircleOutline } from 'react-icons/io5';
 import { FaSun, FaMoon } from "react-icons/fa";
 import { useTheme } from "../../context/ThemeContext";
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { IoLanguageSharp } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
+import LngSelect from "./LngSelect";
 
+
+const SettingsOptions = memo(({
+  isSideBar,
+  isLightTheme,
+  toggleTheme,
+  t,
+  settingMenuRef
+}) => {
+  return (
+    <div className={`settings-options ${isSideBar ? 'active' : ''}`} ref={settingMenuRef}>
+      <div className="settings-row">
+        <div className="row-left">
+          {isLightTheme ? <IoLanguageSharp className="icon" /> : <IoLanguageSharp className="icon" />}
+          <span>{t("language")}</span>
+        </div>
+          <LngSelect />
+      </div>
+      <div className="settings-row" onClick={toggleTheme}>
+        <div className="row-left">
+          {isLightTheme ? <FaSun className="icon" /> : <FaMoon className="icon" />}
+          <span>{t("theme")}</span>
+        </div>
+        <div className="current-theme">
+        {isLightTheme ? t("light_theme") : t("dark_theme")}
+        </div>
+      </div>
+    </div>
+  );
+});
 
 const SideBar = ({ isSideBar, setIsSideBar, handleNewMessage }) => {
   const [showSettings, setShowSettings] = useState(false);
@@ -26,7 +56,7 @@ const SideBar = ({ isSideBar, setIsSideBar, handleNewMessage }) => {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      // Check if click is outside both the menu and the settings button
+
       if (
         settingMenuRef.current &&
         !settingMenuRef.current.contains(e.target) &&
@@ -48,37 +78,6 @@ const SideBar = ({ isSideBar, setIsSideBar, handleNewMessage }) => {
   const handleSettingsClick = (e) => {
     e.stopPropagation();
     setShowSettings(prev => !prev);
-  };
-
-  const SettingsOptions = () => {
-    return (
-      <div className={`settings-options ${isSideBar ? 'active' : ''}`} ref={settingMenuRef}>
-        <div className="settings-row">
-          <div className="row-left">
-            {isLightTheme ? <IoLanguageSharp className="icon" /> : <IoLanguageSharp className="icon" />}
-            <span>{t("language")}</span>
-          </div>
-            <select
-            className="language-select"
-              onChange={(e) => i18n.changeLanguage(e.target.value)}
-              value={i18n.language}
-            >
-              <option value="en">en</option>
-              <option value="fr">fr</option>
-              <option value="nl">nl</option>
-            </select>
-        </div>
-        <div className="settings-row" onClick={toggleTheme}>
-          <div className="row-left">
-            {isLightTheme ? <FaSun className="icon" /> : <FaMoon className="icon" />}
-            <span>{t("theme")}</span>
-          </div>
-          <div className="current-theme">
-          {isLightTheme ? t("light_theme") : t("dark_theme")}
-          </div>
-        </div>
-      </div>
-    );
   };
 
   useEffect(() => {
@@ -112,14 +111,20 @@ const SideBar = ({ isSideBar, setIsSideBar, handleNewMessage }) => {
           {isSideBar && <span className="icon-text">{t("docs")}</span>}
         </div>
         <div
-          ref={settingsButtonRef} // Added ref here
+          ref={settingsButtonRef}
           className={`settings-button-icon ${isSideBar ? 'active' : ''}`}
           onClick={handleSettingsClick}
         >
           <IoIosSettings className="IoIosSettings" size="22px"/>
           {isSideBar && <span className="icon-text">{t("settings")}</span>}
         </div>
-        {showSettings && <SettingsOptions />}
+        {showSettings && <SettingsOptions
+        isSideBar = {isSideBar}
+        isLightTheme = {isLightTheme}
+        toggleTheme = {toggleTheme}
+        t = {t}
+        settingMenuRef = {settingMenuRef}
+        />}
       </div>
     </div>
   );
