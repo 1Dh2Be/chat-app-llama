@@ -3,7 +3,7 @@ import "./ChatApp.css";
 
 //Component & libraries import
 import ChatDiscussion from "../chat-discussion/ChatDiscussion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModelDropDown from "./components/model-selection/ModelDropDown.jsx";
 import { handleNewChat } from './utils/handlers.js';
 import { cardsData } from "./components/cards/cards-data.js";
@@ -28,19 +28,40 @@ const ChatApp = () => {
     setIsNewChat(false)
   }
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 600);
+
+    window.addEventListener("resize", handleResize)
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    };
+  }, []);
+
   return (
     <div className="app">
       {/* Sidebar */}
-      <SideBar
-        isSideBar={isSideBar}
-        setIsSideBar={setIsSideBar}
-        handleNewMessage={newMessage}
-      />
+      {!isMobile && (
+              <SideBar
+              isSideBar={isSideBar}
+              setIsSideBar={setIsSideBar}
+              handleNewMessage={newMessage}
+              />
+      )}
 
       {/* Main Content */}
       <div className="main-content">
         {/* Header */}
         <header className="header">
+          {isMobile && (
+            <SideBar
+            isSideBar={isSideBar}
+            setIsSideBar={setIsSideBar}
+            handleNewMessage={newMessage}
+            />
+          )}
           <ModelDropDown />
           <section className="right-section">
             <UserIcon />

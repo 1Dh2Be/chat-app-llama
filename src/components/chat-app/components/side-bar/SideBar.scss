@@ -232,3 +232,46 @@
     background-color: transparent;
     color: var(--text-primary);
 }
+
+@media (max-width:600px) {
+    .sidebar {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        box-sizing: border-box;
+        background-color: transparent;
+        padding: 0;
+        width: 70px;
+        padding-left: 1.2rem;
+        transition: none;
+        z-index: 101;
+
+        .spacer {
+            flex-grow: 1;
+          }
+
+        &.active {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 40%;
+            display: flex;
+            align-items: flex-start;
+            box-sizing: border-box;
+            padding-left: 1.2rem;
+            width: 60%;
+            background-color: white;
+            z-index: 100;
+        }
+    }
+
+    .add-button-icon {
+        display: none;
+    }
+
+    .bottom-icons {
+        display: none;
+    }
+}

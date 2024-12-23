@@ -68,3 +68,24 @@ $main-section-color: #212121;
     gap: 20px;
 }
 
+@media (max-width:600px) {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 10px;
+
+        .left-section {
+            justify-self: flex-end;
+        }
+
+        .right-section {
+            justify-self: flex-end;
+        }
+    }
+
+    .cards {
+        display: none;
+    }
+}
+

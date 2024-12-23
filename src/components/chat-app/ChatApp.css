@@ -59,4 +59,21 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+  }
+  .header .left-section {
+    justify-self: flex-end;
+  }
+  .header .right-section {
+    justify-self: flex-end;
+  }
+  .cards {
+    display: none;
+  }
 }/*# sourceMappingURL=ChatApp.css.map */
