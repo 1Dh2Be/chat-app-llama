@@ -218,18 +218,17 @@
 }
 
 @media (max-width: 600px) {
-  .bottom-icons {
-    display: none;
-  }
   .sidebar {
+    position: absolute;
     flex-direction: row;
     background-color: transparent;
     padding: 0;
     height: -moz-fit-content;
     height: fit-content;
-    width: 70px;
+    width: 40px;
+    height: 30px;
     padding-left: 1.2rem;
-    transition: none;
+    transition: width 0.1s ease-in-out;
     z-index: 101;
   }
   .sidebar .spacer {
@@ -239,7 +238,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 40%;
+    left: 0;
     flex-direction: column;
     padding: 21px 0 20px 1.8rem;
     width: 60%;
@@ -262,8 +261,10 @@
     margin: 21px 0 0 0;
     width: 35px !important;
     height: 35px;
-    display: none;
     gap: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, visibility 0s ease;
   }
   .add-button-icon .GoPlus {
     position: absolute;
@@ -276,12 +277,24 @@
     margin-left: 0;
   }
   .add-button-icon.active {
-    display: none;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out, visibility 0s ease;
   }
   .add-button-icon.active {
     display: block;
   }
-  .bottom-icons.active {
+  .bottom-icons {
     display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0s linear 0s; /* Delay visibility to sync with animation */
+  }
+  .bottom-icons.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0s linear 0s; /* Instantly make visible when active */
   }
 }/*# sourceMappingURL=SideBar.css.map */

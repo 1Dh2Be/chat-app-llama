@@ -80,8 +80,9 @@ $main-section-color: #212121;
         justify-content: space-between;
         padding: 15px 10px;
 
-        .left-section {
-            justify-self: flex-end;
+        .dropdown-container {
+            padding-left: 5em;
+
         }
 
         .right-section {
