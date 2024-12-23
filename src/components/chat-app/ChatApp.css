@@ -47,12 +47,15 @@
   align-items: flex-start;
   font-size: 45px;
   color: #777;
+  text-align: center;
 }
 .greeting h2 .greeting-text {
+  width: 100%;
   background-image: linear-gradient(to right, #4169E1, #6B54C7, #B85F9A 50%, #EE3144);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
+  text-align: center;
 }
 
 .cards {
