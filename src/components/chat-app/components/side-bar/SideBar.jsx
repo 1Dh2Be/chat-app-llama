@@ -105,7 +105,7 @@ const SideBar = ({ isSideBar, setIsSideBar, handleNewMessage }) => {
 
       <div className="spacer"></div>
 
-      <div className="bottom-icons">
+      <div className={`bottom-icons ${isSideBar ? 'active' : ''}`}>
         <div className={`help-button-icon ${isSideBar ? 'active' : ''}`}>
           <IoHelpCircleOutline className="IoHelpCircleOutline" size="22px"/>
           {isSideBar && <span className="icon-text">{t("docs")}</span>}

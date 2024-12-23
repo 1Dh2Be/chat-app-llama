@@ -23,6 +23,7 @@ form {
   max-width: 750px;
 }
 .input-container .caution-message {
+  text-align: center;
   padding-top: 5px;
   color: var(--text-secondary);
   font-size: 12px;

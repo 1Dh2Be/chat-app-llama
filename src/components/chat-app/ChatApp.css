@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   min-height: 100vh;
+  width: 100%;
 }
 
 .main-content {
@@ -62,6 +63,9 @@
 }
 
 @media (max-width: 600px) {
+  .main-content {
+    width: 100vw;
+  }
   .header {
     display: flex;
     justify-content: space-between;
@@ -72,6 +76,24 @@
   }
   .header .right-section {
     justify-self: flex-end;
+  }
+  .greeting {
+    box-sizing: border-box;
+    padding: 0 30px;
+    padding-bottom: 100px;
+  }
+  .greeting h2 {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 20px;
+    color: #777;
+  }
+  .greeting h2 .greeting-text {
+    width: 100%;
+    text-align: center;
   }
   .cards {
     display: none;

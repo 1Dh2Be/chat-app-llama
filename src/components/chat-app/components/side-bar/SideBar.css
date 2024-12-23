@@ -218,15 +218,15 @@
 }
 
 @media (max-width: 600px) {
+  .bottom-icons {
+    display: none;
+  }
   .sidebar {
-    position: relative;
-    display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    box-sizing: border-box;
     background-color: transparent;
     padding: 0;
+    height: -moz-fit-content;
+    height: fit-content;
     width: 70px;
     padding-left: 1.2rem;
     transition: none;
@@ -240,18 +240,48 @@
     top: 0;
     bottom: 0;
     right: 40%;
-    display: flex;
-    align-items: flex-start;
-    box-sizing: border-box;
-    padding-left: 1.2rem;
+    flex-direction: column;
+    padding: 21px 0 20px 1.8rem;
     width: 60%;
-    background-color: white;
+    height: 100%;
+    background-color: var(--background-secondary);
     z-index: 100;
   }
+  #menu-icon {
+    position: relative;
+    left: 4px;
+    z-index: 102;
+  }
   .add-button-icon {
+    background-color: transparent;
+    position: absolute;
+    left: auto;
+    right: 20px;
+    top: 0;
+    margin: 0;
+    margin: 21px 0 0 0;
+    width: 35px !important;
+    height: 35px;
+    display: none;
+    gap: 0;
+  }
+  .add-button-icon .GoPlus {
+    position: absolute;
+    left: 4px;
+    min-width: 31px;
+    color: var(--text-primary);
+  }
+  .add-button-icon .icon-text {
+    display: none;
+    margin-left: 0;
+  }
+  .add-button-icon.active {
     display: none;
   }
-  .bottom-icons {
-    display: none;
+  .add-button-icon.active {
+    display: block;
+  }
+  .bottom-icons.active {
+    display: block;
   }
 }/*# sourceMappingURL=SideBar.css.map */
