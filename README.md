@@ -2,7 +2,7 @@
 
 Nexus is a chat application built with React, designed to showcase what I learned during the Meta Front-End Engineer course certification. This project represents a milestone in my journey to becoming a front-end engineer. At the time of building this, I was only 1.5 months into my learning process.
 
-## Screenshots 📸
+## 📸 Preview
 
 ![Chat App Preview](./public/app_preview.png)
 
@@ -14,6 +14,7 @@ Nexus is a chat application built with React, designed to showcase what I learne
 - Integration with advanced AI models.
   - **Nexus**: Powered by `Qwen2-72B-Instruct`.
   - **Nexus Pro**: Powered by `llama3.1-405b`.
+- Note: Conversation history feature planned for future implementation with backend integration.
 
 
 ## Motivation 💡
@@ -23,6 +24,7 @@ The primary goal of this project was to apply the skills I acquired during the M
 - **Restructuring**: As my skills grow, I plan to restructure the project for better maintainability and scalability.
 - **Tailwind CSS**: While currently styled using SASS, I intend to transition to Tailwind CSS once I feel more comfortable with it.
 - **Version 2**: A cleaner, more polished version of Nexus may be developed when these improvements are implemented.
+- **Backend Integration**: Implementation of conversation history and persistent storage.
 
 ## Challenges & Vision 🛠️
 Originally, I planned to implement image comprehension using the vision capabilities of Llama 3.2 models (11B & 90B). Unfortunately, the lack of proper Llama API documentation for these vision models made this feature infeasible for the initial release. This remains an area of interest for future exploration.
