@@ -74,7 +74,7 @@ const ChatApp = () => {
             <div className="greeting">
               <h2>
                 <span className="greeting-text">{t("greeting")}, Mimoun<br/></span>
-                <span>{t("topic")}</span>
+                <span className="topic-text">{t("topic")}</span>
               </h2>
                 <div className="cards">
                   {cardsData.map((data, index) => (

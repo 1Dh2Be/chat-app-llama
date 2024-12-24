@@ -57,6 +57,9 @@
   color: transparent;
   text-align: center;
 }
+.greeting h2 .topic-text {
+  width: 100%;
+}
 
 .cards {
   display: flex;
