@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Nexus 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nexus is a chat application built with React, designed to showcase what I learned during the Meta Front-End Engineer course certification. This project represents a milestone in my journey to becoming a front-end engineer. At the time of building this, I was only 1.5 months into my learning process.
 
-## Available Scripts
+## Screenshots 📸
 
-In the project directory, you can run:
+![Chat App Preview](./public/app_preview.png)
 
-### `npm start`
+## Features ✨
+- Dynamic chat capabilities.
+- Cross-platform support: Fully functional on mobile, tablet, and desktop devices.
+- Theme changer: Switch seamlessly between dark and light themes.
+- Multi-language support: Available in French, English, and Dutch.
+- Integration with advanced AI models.
+  - **Nexus**: Powered by `Qwen2-72B-Instruct`.
+  - **Nexus Pro**: Powered by `llama3.1-405b`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Motivation 💡
+The primary goal of this project was to apply the skills I acquired during the Meta certification course, including React development, component structuring, and state management. While the project is far from perfect, it represents an important step in my development as a front-end engineer.
 
-### `npm test`
+## Future Plans 🔮
+- **Restructuring**: As my skills grow, I plan to restructure the project for better maintainability and scalability.
+- **Tailwind CSS**: While currently styled using SASS, I intend to transition to Tailwind CSS once I feel more comfortable with it.
+- **Version 2**: A cleaner, more polished version of Nexus may be developed when these improvements are implemented.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Challenges & Vision 🛠️
+Originally, I planned to implement image comprehension using the vision capabilities of Llama 3.2 models (11B & 90B). Unfortunately, the lack of proper Llama API documentation for these vision models made this feature infeasible for the initial release. This remains an area of interest for future exploration.
 
-### `npm run build`
+## Design Inspiration 🎨
+The app design was heavily inspired by popular chat applications like ChatGPT and Gemini. These apps served as a reference for creating an intuitive and user-friendly interface.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Acknowledgments 🙏
+This project is not a polished final product, and the code reflects my early-stage learning. However, it stands as a testament to the knowledge gained and challenges overcome during this foundational phase of my front-end engineering journey.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Getting Started 🏁
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/nexus.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create the API key file:
+   - In the `src/components/api` folder, create a new file named `apiKey.js`.
+   - Add the following line of code to the file:
+     ```javascript
+     export const API_KEY = "API KEY HERE";
+     ```
+   - You can obtain an API key from [Llama API](https://www.llama-api.com/).
+4. Run the application:
+   ```bash
+   npm start
+   ```
