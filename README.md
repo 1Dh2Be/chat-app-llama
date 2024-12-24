@@ -2,7 +2,7 @@
 
 Nexus is a chat application built with React, designed to showcase what I learned during the Meta Front-End Engineer course certification. This project represents a milestone in my journey to becoming a front-end engineer. At the time of building this, I was only 1.5 months into my learning process.
 
-## Screenshots 📸
+## 📸 Preview
 
 ![Chat App Preview](./public/app_preview.png)
 
